@@ -4,7 +4,7 @@ import pureRender from 'pure-render-decorator';
 import theme from './theme';
 
 @pureRender
-export default class ReactLogo extends React.Component {
+export default class ReactIcon extends React.Component {
   render() {
     return (
       <svg viewBox="0 0 128 112">

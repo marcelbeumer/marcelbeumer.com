@@ -8,8 +8,8 @@ import Slider from './slider';
 import SliderGrippy from './slider-grippy';
 import SiteLogo from './site-logo';
 import SpeechBubble from './speech-bubble';
-import JavaScriptLogo from './javascript-logo';
-import ReactLogo from './react-logo';
+import JavaScriptIcon from './javascript-icon';
+import ReactIcon from './react-icon';
 import styles from './home-screen-styles';
 
 const { object } = React.PropTypes;
@@ -54,12 +54,18 @@ export default class HomeScreen extends React.Component {
           <div className={styles.iam}>
             I'm a freelancer and I love
           </div>
-          <div className={styles.javascriptLogo}>
-            <JavaScriptLogo />
-          </div>
-          <div className={styles.reactLogo}>
-            <ReactLogo />
-          </div>
+          <a className={styles.javaScriptIcon}
+            href="//developer.mozilla.org/docs/Web/JavaScript"
+            alt="JavaScript"
+            target="_blank">
+            <JavaScriptIcon />
+          </a>
+          <a className={styles.reactIcon}
+            href="//facebook.github.io/react"
+            alt="React"
+            target="_blank">
+            <ReactIcon />
+          </a>
         </div>
 
         {/*}

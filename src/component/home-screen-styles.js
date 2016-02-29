@@ -39,12 +39,12 @@ const styles = StyleSheet.create({
     margin: '1.25em 0',
     fontSize: '1.25rem',
   },
-  javascriptLogo: {
+  javaScriptIcon: {
     display: 'inline-block',
     width: '22%',
     margin: '0 0.2rem',
   },
-  reactLogo: {
+  reactIcon: {
     display: 'inline-block',
     width: '24%',
     margin: '0 0.2rem',
