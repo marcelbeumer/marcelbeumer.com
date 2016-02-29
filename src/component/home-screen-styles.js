@@ -10,10 +10,13 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: '160px',
   },
-  siteLogo: {
+  logoContainer: {
     display: 'inline-block',
     position: 'relative',
     width: '40%',
+  },
+  siteLogo: {
+    fontSize: 0,
   },
   speechBubble: {
     width: '35%',
@@ -41,12 +44,12 @@ const styles = StyleSheet.create({
   },
   javaScriptIcon: {
     display: 'inline-block',
-    width: '22%',
+    width: '9%',
     margin: '0 0.2rem',
   },
   reactIcon: {
     display: 'inline-block',
-    width: '24%',
+    width: '10%',
     margin: '0 0.2rem',
   },
 });

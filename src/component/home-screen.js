@@ -45,28 +45,31 @@ export default class HomeScreen extends React.Component {
 
     return (
       <div className={styles.root}>
-        <div className={styles.siteLogo}>
+        <div className={styles.logoContainer}>
           <div className={styles.speechBubble}>
             <SpeechBubble />
             <span className={styles.speechText}>ich bin</span>
           </div>
-          <SiteLogo />
-          <div className={styles.iam}>
-            I'm a freelancer and I love
+          <div className={styles.siteLogo}>
+            <SiteLogo />
+            Marcel Beumer
           </div>
-          <a className={styles.javaScriptIcon}
-            href="//developer.mozilla.org/docs/Web/JavaScript"
-            alt="JavaScript"
-            target="_blank">
-            <JavaScriptIcon />
-          </a>
-          <a className={styles.reactIcon}
-            href="//facebook.github.io/react"
-            alt="React"
-            target="_blank">
-            <ReactIcon />
-          </a>
         </div>
+        <div className={styles.iam}>
+          I'm a freelancer and I love
+        </div>
+        <a className={styles.javaScriptIcon}
+          href="//developer.mozilla.org/docs/Web/JavaScript"
+          alt="JavaScript"
+          target="_blank">
+          <JavaScriptIcon />
+        </a>
+        <a className={styles.reactIcon}
+          href="//facebook.github.io/react"
+          alt="React"
+          target="_blank">
+          <ReactIcon />
+        </a>
 
         {/*}
         <div className={styles.hero}>
