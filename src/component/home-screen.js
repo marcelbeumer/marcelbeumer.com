@@ -10,6 +10,9 @@ import SiteLogo from './site-logo';
 import SpeechBubble from './speech-bubble';
 import JavaScriptIcon from './javascript-icon';
 import ReactIcon from './react-icon';
+import GithubIcon from './github-icon';
+import TwitterIcon from './twitter-icon';
+import LinkedinIcon from './linkedin-icon';
 import styles from './home-screen-styles';
 
 const { object } = React.PropTypes;
@@ -59,17 +62,37 @@ export default class HomeScreen extends React.Component {
           I'm a freelancer and I love
         </div>
         <a className={styles.javaScriptIcon}
-          href="//developer.mozilla.org/docs/Web/JavaScript"
+          href="https://developer.mozilla.org/docs/Web/JavaScript"
           alt="JavaScript"
           target="_blank">
           <JavaScriptIcon />
         </a>
         <a className={styles.reactIcon}
-          href="//facebook.github.io/react"
+          href="https://facebook.github.io/react"
           alt="React"
           target="_blank">
           <ReactIcon />
         </a>
+
+        <div className={styles.websites}>
+          <a className={styles.githubIcon}
+            href="https://github.com/marcelbeumer"
+            alt="Github">
+            <GithubIcon />
+          </a>
+
+          <a className={styles.twitterIcon}
+            href="https://twitter.com/marcelbeumer"
+            alt="Github">
+            <TwitterIcon />
+          </a>
+
+          <a className={styles.linkedinIcon}
+            href="https://twitter.com/marcelbeumer"
+            alt="Github">
+            <LinkedinIcon />
+          </a>
+        </div>
 
         {/*}
         <div className={styles.hero}>

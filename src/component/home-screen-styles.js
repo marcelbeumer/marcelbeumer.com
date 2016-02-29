@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     color: theme.inverseTextColor,
   },
   iam: {
-    margin: '1.25em 0',
+    margin: '1.25rem 0',
     fontSize: '1.25rem',
   },
   javaScriptIcon: {
@@ -51,6 +51,28 @@ const styles = StyleSheet.create({
     display: 'inline-block',
     width: '10%',
     margin: '0 0.2rem',
+  },
+  websites: {
+    padding: '1.25rem 0',
+  },
+  githubIcon: {
+    display: 'inline-block',
+    width: '7%',
+    margin: '0 0.5rem',
+  },
+  twitterIcon: {
+    display: 'inline-block',
+    position: 'relative',
+    top: '-2px',
+    width: '7%',
+    margin: '0 0.5rem',
+  },
+  linkedinIcon: {
+    display: 'inline-block',
+    position: 'relative',
+    top: '2px',
+    width: '7%',
+    margin: '0 0.5rem',
   },
 });
 
