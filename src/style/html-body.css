@@ -5,11 +5,12 @@
 html, body {
   margin: 0;
   padding: 0;
+  font-family: var(--ui-font-family);
+  font-size: var(--ui-font-size);
+  font-weight: var(--ui-font-weight);
 }
 
 body {
-  font-family: var(--ui-font-family);
-  font-size: var(--ui-font-size);
   background-color: var(--ui-background-color);
   color: var(--ui-text-color);
 }

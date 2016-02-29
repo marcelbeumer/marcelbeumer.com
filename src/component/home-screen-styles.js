@@ -4,32 +4,40 @@ import theme from './theme';
 const styles = StyleSheet.create({
   root: {
     margin: '0 auto',
-    maxWidth: '1600px',
+    width: '960px',
     minHeight: '100vh',
-    display: 'flex',
-    flexDirection: 'column',
+    color: theme.textColor,
+    textAlign: 'center',
+    marginTop: '160px',
   },
-  thinHeaderBar: {
-    backgroundColor: theme.backgroundColor,
+  logo: {
+    display: 'inline-block',
+    position: 'relative',
+    width: '40%',
   },
-  hero: {
-    [theme.media.fromDesktop]: {
-      display: 'flex',
-      flex: 1,
-    },
+  speechBubble: {
+    width: '35%',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    transform: 'translate(-90%, -90%)',
+    textAlign: 'center',
   },
-  title: {
-    [theme.media.fromDesktop]: {
-      textAlign: 'center',
-      flex: '1',
-      fontSize: '2rem',
-    },
+  speechText: {
+    position: 'absolute',
+    display: 'block',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+    fontSize: '1.25rem',
+    textAlign: 'center',
+    transform: 'translate(0, 30%)',
+    color: theme.inverseTextColor,
   },
-  primaryControls: {
-    flex: '0 1 30%',
-  },
-  secondaryControls: {
-    flex: '0 1 30%',
+  iam: {
+    margin: '1.25em 0',
+    fontSize: '1.25rem',
   },
 });
 

@@ -1,11 +1,12 @@
 export default {
-  fontFamily: 'Consolas, "Liberation Mono", Menlo, Courier, monospace',
-  fontSize: '16px',
+  fontFamily: 'Helvetica, sans-serif',
+  fontSize: '20px',
+  fontWeight: '100',
   backgroundColor: '#fff',
-  highlightColor: '#2ea6d9',
-  primaryBorderColor: 'rgb(204, 204, 204)',
-  secondaryBorderColor: 'rgb(150, 150, 150)',
-  textColor: '#222',
+  highlightColor: '#000',
+  primaryBorderColor: '#000',
+  secondaryBorderColor: '#000',
+  textColor: '#000',
   inverseTextColor: '#fff',
   media: {
     fromDesktop: '@media screen and (min-width: 600px)',
