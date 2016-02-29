@@ -6,8 +6,10 @@ import DotPlotter from './dot-plotter';
 import BarMeter from './bar-meter';
 import Slider from './slider';
 import SliderGrippy from './slider-grippy';
-import Logo from './logo';
+import SiteLogo from './site-logo';
 import SpeechBubble from './speech-bubble';
+import JavaScriptLogo from './javascript-logo';
+import ReactLogo from './react-logo';
 import styles from './home-screen-styles';
 
 const { object } = React.PropTypes;
@@ -43,14 +45,20 @@ export default class HomeScreen extends React.Component {
 
     return (
       <div className={styles.root}>
-        <div className={styles.logo}>
+        <div className={styles.siteLogo}>
           <div className={styles.speechBubble}>
             <SpeechBubble />
             <span className={styles.speechText}>ich bin</span>
           </div>
-          <Logo />
+          <SiteLogo />
           <div className={styles.iam}>
             I'm a freelancer and I love
+          </div>
+          <div className={styles.javascriptLogo}>
+            <JavaScriptLogo />
+          </div>
+          <div className={styles.reactLogo}>
+            <ReactLogo />
           </div>
         </div>
 

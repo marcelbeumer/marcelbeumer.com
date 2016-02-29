@@ -345,7 +345,7 @@ const path = [
 ];
 
 @pureRender
-export default class Logo extends React.Component {
+export default class SiteLogo extends React.Component {
   render() {
     return (
       <svg viewBox={viewBox}>

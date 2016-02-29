@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: '160px',
   },
-  logo: {
+  siteLogo: {
     display: 'inline-block',
     position: 'relative',
     width: '40%',
@@ -38,6 +38,16 @@ const styles = StyleSheet.create({
   iam: {
     margin: '1.25em 0',
     fontSize: '1.25rem',
+  },
+  javascriptLogo: {
+    display: 'inline-block',
+    width: '22%',
+    margin: '0 0.2rem',
+  },
+  reactLogo: {
+    display: 'inline-block',
+    width: '24%',
+    margin: '0 0.2rem',
   },
 });
 
