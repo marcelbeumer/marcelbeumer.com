@@ -77,19 +77,22 @@ export default class HomeScreen extends React.Component {
         <div className={styles.websites}>
           <a className={styles.githubIcon}
             href="https://github.com/marcelbeumer"
-            alt="Github">
+            alt="Github"
+            target="_blank">
             <GithubIcon />
           </a>
 
           <a className={styles.twitterIcon}
             href="https://twitter.com/marcelbeumer"
-            alt="Github">
+            alt="Github"
+            target="_blank">
             <TwitterIcon />
           </a>
 
           <a className={styles.linkedinIcon}
             href="https://twitter.com/marcelbeumer"
-            alt="Github">
+            alt="Github"
+            target="_blank">
             <LinkedinIcon />
           </a>
         </div>

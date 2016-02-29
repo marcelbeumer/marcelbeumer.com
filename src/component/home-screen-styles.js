@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     minHeight: '100vh',
     color: theme.textColor,
     textAlign: 'center',
-    marginTop: '160px',
+    paddingTop: '160px',
   },
   logoContainer: {
     display: 'inline-block',
