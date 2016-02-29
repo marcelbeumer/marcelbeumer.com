@@ -97,6 +97,14 @@ export default class HomeScreen extends React.Component {
           </a>
         </div>
 
+        <div className={styles.contact}>
+          I’m based in Munich and currently looking for projects in Munich or Amsterdam.
+          <a className={styles.mailto}
+            href="mailto:marcel@marcelbeumer.com">
+            marcel@marcelbeumer.com
+          </a>
+        </div>
+
         {/*}
         <div className={styles.hero}>
           <div className={styles.primaryControls}>

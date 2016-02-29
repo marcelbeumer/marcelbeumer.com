@@ -8,6 +8,7 @@ html, body {
   font-family: var(--ui-font-family);
   font-size: var(--ui-font-size);
   font-weight: var(--ui-font-weight);
+  line-height: var(--ui-line-height);
 }
 
 body {

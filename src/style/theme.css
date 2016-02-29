@@ -1,6 +1,7 @@
 :root {
   --ui-font-family: Helvetica, sans-serif;
   --ui-font-size: 20px;
+  --ui-line-height: 1.3em;
   --ui-font-weight: 100;
   --ui-background-color: #fff;
   --ui-text-color: #222;

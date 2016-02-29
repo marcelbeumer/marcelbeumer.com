@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
   },
   siteLogo: {
     fontSize: 0,
+    lineHeight: 0,
   },
   speechBubble: {
     width: '35%',
@@ -73,6 +74,17 @@ const styles = StyleSheet.create({
     top: '2px',
     width: '7%',
     margin: '0 0.5rem',
+  },
+  contact: {
+  },
+  mailto: {
+    display: 'block',
+    textAlign: 'center',
+    color: theme.textColor,
+    textDecoration: 'none',
+    [':hover']: {
+      textDecoration: 'underline',
+    },
   },
 });
 
