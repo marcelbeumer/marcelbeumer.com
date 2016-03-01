@@ -51,7 +51,7 @@ export default class HomeScreen extends React.Component {
         <div className={styles.logoContainer}>
           <div className={styles.speechBubble}>
             <SpeechBubble />
-            <span className={styles.speechText}>ich bin</span>
+            <span className={styles.speechText}>ik ben</span>
           </div>
           <div className={styles.siteLogo}>
             <SiteLogo />
