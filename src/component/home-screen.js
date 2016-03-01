@@ -74,8 +74,8 @@ export default class HomeScreen extends React.Component {
           <ReactIcon />
         </a>
 
+        {/*
         <div className={styles.controls}>
-
           <div className={styles.control}>
             <BarMeter bars={bars} onClick={actions.generateBars} />
           </div>
@@ -90,6 +90,7 @@ export default class HomeScreen extends React.Component {
             <BarMeter bars={bars} onClick={actions.generateBars} />
           </div>
         </div>
+        */}
 
         <div className={styles.websites}>
           <a className={styles.githubIcon}

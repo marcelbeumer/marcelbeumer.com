@@ -55,6 +55,7 @@ const styles = StyleSheet.create({
   },
   websites: {
     padding: '1.25rem 0',
+    marginTop: '100px',
   },
   githubIcon: {
     display: 'inline-block',
