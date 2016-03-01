@@ -4,16 +4,26 @@ import theme from './theme';
 const styles = StyleSheet.create({
   root: {
     margin: '0 auto',
-    width: '960px',
+    minWidth: '320px',
     minHeight: '100vh',
+    width: '100%',
     color: theme.textColor,
     textAlign: 'center',
-    paddingTop: '160px',
+    paddingTop: '60px',
+    fontSize: '13px',
+    lineHeight: '18px',
+    [theme.media.fromDesktop]: {
+      paddingTop: '160px',
+      width: '960px',
+    },
   },
   logoContainer: {
     display: 'inline-block',
     position: 'relative',
-    width: '40%',
+    width: '200px',
+    [theme.media.fromDesktop]: {
+      width: '384px',
+    },
   },
   siteLogo: {
     fontSize: 0,
@@ -34,47 +44,76 @@ const styles = StyleSheet.create({
     left: 0,
     bottom: 0,
     right: 0,
-    fontSize: '1.25rem',
     textAlign: 'center',
-    transform: 'translate(0, 30%)',
     color: theme.inverseTextColor,
+    fontSize: '1em',
+    transform: 'translate(0, 22%)',
+    [theme.media.fromDesktop]: {
+      fontSize: '16px',
+      transform: 'translate(0, 30%)',
+    },
   },
   iam: {
-    margin: '1.1rem 0 1.7rem 0',
-    fontSize: '1.25rem',
+    margin: '10px 0 18px 0',
+    fontSize: '15px',
+    [theme.media.fromDesktop]: {
+      margin: '21px 0 32px 0',
+      fontSize: '16px',
+    },
   },
   javaScriptIcon: {
     display: 'inline-block',
-    width: '8%',
-    margin: '0 0.2rem',
+    margin: '0 5px',
+    width: '50px',
+    [theme.media.fromDesktop]: {
+      width: '76px',
+    },
   },
   reactIcon: {
     display: 'inline-block',
-    width: '9%',
-    margin: '0 0.2rem',
+    margin: '0 5px',
+    width: '55px',
+    [theme.media.fromDesktop]: {
+      width: '83px',
+    },
   },
   websites: {
-    padding: '1.25rem 0',
-    marginTop: '100px',
+    padding: '20px 0',
+    marginTop: '50px',
+    [theme.media.fromDesktop]: {
+      marginTop: '100px',
+    },
   },
   githubIcon: {
     display: 'inline-block',
-    width: '5%',
-    margin: '0 0.3rem',
+    width: '35px',
+    margin: '0 10px',
+    [theme.media.fromDesktop]: {
+      width: '48px',
+      margin: '0 5px',
+    },
   },
   twitterIcon: {
     display: 'inline-block',
     position: 'relative',
     top: '-2px',
-    width: '5%',
-    margin: '0 0.3rem',
+    width: '35px',
+    margin: '0 10px',
+    [theme.media.fromDesktop]: {
+      width: '48px',
+      margin: '0 5px',
+    },
   },
   linkedinIcon: {
     display: 'inline-block',
     position: 'relative',
     top: '2px',
-    width: '5%',
-    margin: '0 0.3rem',
+    width: '35px',
+    margin: '0 10px',
+    [theme.media.fromDesktop]: {
+      width: '48px',
+      margin: '0 5px',
+    },
   },
   controls: {
     display: 'flex',
@@ -88,6 +127,7 @@ const styles = StyleSheet.create({
     height: '25px',
   },
   contact: {
+    padding: '0 10px',
   },
   mailto: {
     display: 'block',

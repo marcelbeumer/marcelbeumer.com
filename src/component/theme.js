@@ -9,7 +9,7 @@ export default {
   textColor: '#000',
   inverseTextColor: '#fff',
   media: {
-    fromDesktop: '@media screen and (min-width: 600px)',
-    untilDesktop: '@media screen and (max-width: 599px)',
+    fromDesktop: '@media screen and (min-width: 960px)',
+    untilDesktop: '@media screen and (max-width: 959px)',
   },
 };

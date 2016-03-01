@@ -29,3 +29,7 @@ expose('actions', actions);
 
 debug('bootstrap done');
 renderer(initialState, actions);
+
+if (process.env.NODE_ENV === 'production') {
+  require('./ga')(settings.gaTrackingId);
+}
