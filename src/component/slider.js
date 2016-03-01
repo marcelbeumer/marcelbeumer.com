@@ -22,9 +22,8 @@ export const styles = StyleSheet.create({
     position: 'absolute',
     top: '50%',
     width: '100%',
-    height: '1px',
-    border: `1px solid ${theme.primaryBorderColor}`,
-    borderWidth: '1px 0 0',
+    height: '2px',
+    backgroundColor: theme.primaryBorderColor,
   },
 });
 

@@ -15,22 +15,12 @@ export const styles = StyleSheet.create({
     padding: '10px',
     cursor: 'hand',
   },
-  item: {
-    display: 'flex',
-  },
-  label: {
-    flex: '0 0 3.5em',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    padding: '0 5px',
-    fontSize: '0.8em',
-  },
   bar: {
-    flex: '1 1 100%',
     height: '1em',
     backgroundColor: barColor,
     transition: '1s ease-in',
     borderRadius: '2px',
+    margin: '0 0 5px 0',
   },
 });
 
@@ -61,7 +51,6 @@ export default class BarMeter extends React.Component {
             backgroundColor: color(barColor).darken(shade / 2).rgbString(),
           }}>
           </div>
-          <div className={styles.label}>{label}</div>
         </div>
       );
     });

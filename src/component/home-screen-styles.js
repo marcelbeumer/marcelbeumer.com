@@ -58,26 +58,26 @@ const styles = StyleSheet.create({
   },
   githubIcon: {
     display: 'inline-block',
-    width: '7%',
+    width: '6%',
     margin: '0 0.5rem',
   },
   twitterIcon: {
     display: 'inline-block',
     position: 'relative',
     top: '-2px',
-    width: '7%',
+    width: '6%',
     margin: '0 0.5rem',
   },
   linkedinIcon: {
     display: 'inline-block',
     position: 'relative',
     top: '2px',
-    width: '7%',
+    width: '6%',
     margin: '0 0.5rem',
   },
   controls: {
     display: 'flex',
-    padding: '100px 20%',
+    padding: '120px 10% 80px 10%',
   },
   control: {
     flex: '1',

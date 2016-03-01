@@ -75,6 +75,11 @@ export default class HomeScreen extends React.Component {
         </a>
 
         <div className={styles.controls}>
+
+          <div className={styles.control}>
+            <BarMeter bars={bars} onClick={actions.generateBars} />
+          </div>
+
           <div className={styles.control}>
             <Slider values={sliders} onChange={actions.updateSliders} />
             <div className={styles.controlsSpacer} />
@@ -102,7 +107,7 @@ export default class HomeScreen extends React.Component {
           </a>
 
           <a className={styles.linkedinIcon}
-            href="https://twitter.com/marcelbeumer"
+            href="https://linkedin.com/in/marcelbeumer"
             alt="Github"
             target="_blank">
             <LinkedinIcon />

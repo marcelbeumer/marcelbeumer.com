@@ -10,9 +10,9 @@ const { number, func } = React.PropTypes;
 export const styles = StyleSheet.create({
   grippy: {
     position: 'absolute',
-    width: '8px',
-    height: '30px',
-    top: 'calc(50% - 15px)',
+    width: '15px',
+    height: '34px',
+    top: 'calc(50% - 17px)',
     transform: 'translate(-50%)',
     borderRadius: '2px',
     backgroundColor: theme.highlightColor,
