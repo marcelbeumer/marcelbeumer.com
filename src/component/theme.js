@@ -9,6 +9,6 @@ export default {
   inverseTextColor: '#fff',
   media: {
     fromTablet: '@media screen and (min-width: 600px)',
-    fromDesktop: '@media screen and (min-width: 960px)',
+    fromDesktop: '@media screen and (min-width: 800px)',
   },
 };

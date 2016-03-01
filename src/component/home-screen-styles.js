@@ -32,6 +32,7 @@ const styles = StyleSheet.create({
     },
     [theme.media.fromDesktop]: {
       fontSize: '16px',
+      lineHeight: '20px',
       paddingTop: '160px',
     },
   },
