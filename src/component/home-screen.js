@@ -51,14 +51,14 @@ export default class HomeScreen extends React.Component {
 
           <a className={styles.twitterIcon}
             href="https://twitter.com/marcelbeumer"
-            alt="Github"
+            alt="Twitter"
             target="_blank">
             <TwitterIcon />
           </a>
 
           <a className={styles.linkedinIcon}
             href="https://linkedin.com/in/marcelbeumer"
-            alt="Github"
+            alt="LinkedIn"
             target="_blank">
             <LinkedinIcon />
           </a>
