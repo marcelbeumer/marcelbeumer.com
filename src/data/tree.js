@@ -6,7 +6,7 @@ import Bar from './bar';
 
 const TreeData = Record({
   dots: generateDots(10),
-  bars: generateBars(5),
+  bars: generateBars(6),
   sliders: generateSliderValues(2),
   resizableContentHeight: 200,
   greeting: 'Hello world',

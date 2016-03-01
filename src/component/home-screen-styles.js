@@ -75,6 +75,17 @@ const styles = StyleSheet.create({
     width: '7%',
     margin: '0 0.5rem',
   },
+  controls: {
+    display: 'flex',
+    padding: '100px 20%',
+  },
+  control: {
+    flex: '1',
+    margin: '0 25px',
+  },
+  controlsSpacer: {
+    height: '25px',
+  },
   contact: {
   },
   mailto: {

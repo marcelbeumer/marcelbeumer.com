@@ -23,12 +23,14 @@ export const styles = StyleSheet.create({
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     padding: '0 5px',
+    fontSize: '0.8em',
   },
   bar: {
     flex: '1 1 100%',
     height: '1em',
     backgroundColor: barColor,
     transition: '1s ease-in',
+    borderRadius: '2px',
   },
 });
 

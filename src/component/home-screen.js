@@ -74,6 +74,18 @@ export default class HomeScreen extends React.Component {
           <ReactIcon />
         </a>
 
+        <div className={styles.controls}>
+          <div className={styles.control}>
+            <Slider values={sliders} onChange={actions.updateSliders} />
+            <div className={styles.controlsSpacer} />
+            <DotPlotter dots={dots} onClick={actions.generateDots} />
+          </div>
+
+          <div className={styles.control}>
+            <BarMeter bars={bars} onClick={actions.generateBars} />
+          </div>
+        </div>
+
         <div className={styles.websites}>
           <a className={styles.githubIcon}
             href="https://github.com/marcelbeumer"
@@ -105,19 +117,6 @@ export default class HomeScreen extends React.Component {
           </a>
         </div>
 
-        {/*}
-        <div className={styles.hero}>
-          <div className={styles.primaryControls}>
-            <DotPlotter dots={dots} onClick={actions.generateDots} />
-            {this.renderSlider()}
-          </div>
-
-          <div className={styles.secondaryControls}>
-            <Slider values={sliders} onChange={actions.updateSliders} />
-            <BarMeter bars={bars} onClick={actions.generateBars} />
-          </div>
-        </div>
-        {*/}
       </div>
     );
   }
