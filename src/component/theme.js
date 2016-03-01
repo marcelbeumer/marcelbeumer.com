@@ -1,6 +1,5 @@
 export default {
   fontFamily: 'Helvetica, sans-serif',
-  fontSize: '20px',
   fontWeight: '100',
   backgroundColor: '#fff',
   highlightColor: '#000',
@@ -9,7 +8,7 @@ export default {
   textColor: '#000',
   inverseTextColor: '#fff',
   media: {
+    fromTablet: '@media screen and (min-width: 600px)',
     fromDesktop: '@media screen and (min-width: 960px)',
-    untilDesktop: '@media screen and (max-width: 959px)',
   },
 };

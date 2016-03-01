@@ -1,6 +1,17 @@
 import StyleSheet from './styles';
 import theme from './theme';
 
+const websiteIconShared = {
+  display: 'inline-block',
+  position: 'relative',
+  width: '35px',
+  margin: '0 10px',
+  [theme.media.fromDesktop]: {
+    width: '48px',
+    margin: '0 5px',
+  },
+};
+
 const styles = StyleSheet.create({
   root: {
     margin: '0 auto',
@@ -10,17 +21,27 @@ const styles = StyleSheet.create({
     color: theme.textColor,
     textAlign: 'center',
     paddingTop: '60px',
-    fontSize: '13px',
-    lineHeight: '18px',
+    fontFamily: theme.fontFamily,
+    fontWeight: theme.fontWeight,
+    fontSize: '12px',
+    lineHeight: '16px',
+    [theme.media.fromTablet]: {
+      fontSize: '14px',
+      lineHeight: '18px',
+      paddingTop: '100px',
+    },
     [theme.media.fromDesktop]: {
+      fontSize: '16px',
       paddingTop: '160px',
-      width: '960px',
     },
   },
   logoContainer: {
     display: 'inline-block',
     position: 'relative',
     width: '200px',
+    [theme.media.fromTablet]: {
+      width: '300px',
+    },
     [theme.media.fromDesktop]: {
       width: '384px',
     },
@@ -46,19 +67,27 @@ const styles = StyleSheet.create({
     right: 0,
     textAlign: 'center',
     color: theme.inverseTextColor,
-    fontSize: '1em',
-    transform: 'translate(0, 22%)',
+    fontSize: '15px',
+    transform: 'translate(0, 23%)',
+    [theme.media.fromTablet]: {
+      fontSize: '20px',
+      transform: 'translate(0, 33%)',
+    },
     [theme.media.fromDesktop]: {
-      fontSize: '16px',
-      transform: 'translate(0, 30%)',
+      fontSize: '24px',
+      transform: 'translate(0, 33%)',
     },
   },
   iam: {
     margin: '10px 0 18px 0',
     fontSize: '15px',
-    [theme.media.fromDesktop]: {
+    [theme.media.fromTablet]: {
       margin: '21px 0 32px 0',
-      fontSize: '16px',
+      fontSize: '20px',
+    },
+    [theme.media.fromDesktop]: {
+      margin: '30px 0 38px 0',
+      fontSize: '24px',
     },
   },
   javaScriptIcon: {
@@ -84,37 +113,14 @@ const styles = StyleSheet.create({
       marginTop: '100px',
     },
   },
-  githubIcon: {
-    display: 'inline-block',
-    width: '35px',
-    margin: '0 10px',
-    [theme.media.fromDesktop]: {
-      width: '48px',
-      margin: '0 5px',
-    },
-  },
-  twitterIcon: {
-    display: 'inline-block',
+  githubIcon: websiteIconShared,
+  twitterIcon: Object.assign({}, websiteIconShared, {
     position: 'relative',
     top: '-2px',
-    width: '35px',
-    margin: '0 10px',
-    [theme.media.fromDesktop]: {
-      width: '48px',
-      margin: '0 5px',
-    },
-  },
-  linkedinIcon: {
-    display: 'inline-block',
-    position: 'relative',
+  }),
+  linkedinIcon: Object.assign({}, websiteIconShared, {
     top: '2px',
-    width: '35px',
-    margin: '0 10px',
-    [theme.media.fromDesktop]: {
-      width: '48px',
-      margin: '0 5px',
-    },
-  },
+  }),
   controls: {
     display: 'flex',
     padding: '120px 10% 80px 10%',
