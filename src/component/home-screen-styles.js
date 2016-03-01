@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     lineHeight: 0,
   },
   speechBubble: {
-    width: '35%',
+    width: '30%',
     position: 'absolute',
     top: 0,
     left: 0,
@@ -40,17 +40,17 @@ const styles = StyleSheet.create({
     color: theme.inverseTextColor,
   },
   iam: {
-    margin: '1.25rem 0',
+    margin: '1.1rem 0 1.7rem 0',
     fontSize: '1.25rem',
   },
   javaScriptIcon: {
     display: 'inline-block',
-    width: '9%',
+    width: '8%',
     margin: '0 0.2rem',
   },
   reactIcon: {
     display: 'inline-block',
-    width: '10%',
+    width: '9%',
     margin: '0 0.2rem',
   },
   websites: {
@@ -59,22 +59,22 @@ const styles = StyleSheet.create({
   },
   githubIcon: {
     display: 'inline-block',
-    width: '6%',
-    margin: '0 0.5rem',
+    width: '5%',
+    margin: '0 0.3rem',
   },
   twitterIcon: {
     display: 'inline-block',
     position: 'relative',
     top: '-2px',
-    width: '6%',
-    margin: '0 0.5rem',
+    width: '5%',
+    margin: '0 0.3rem',
   },
   linkedinIcon: {
     display: 'inline-block',
     position: 'relative',
     top: '2px',
-    width: '6%',
-    margin: '0 0.5rem',
+    width: '5%',
+    margin: '0 0.3rem',
   },
   controls: {
     display: 'flex',
