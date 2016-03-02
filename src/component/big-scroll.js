@@ -28,6 +28,7 @@ export const styles = StyleSheet.create({
     backgroundColor: '#000',
     border: '2px solid #fff',
     color: '#fff',
+    borderRadius: '6px',
   },
 });
 
@@ -116,9 +117,7 @@ export default class BigScroll extends React.Component {
     const offset = inside * containerHeight;
 
     const itemContainerStyle = {
-      // transform: `translateZ(0) translateY(${-offset}px)`,
-      transform: `translateZ(0) translateY(${-offset + scrollTop}px)`,
-      // top: `${-offset + scrollTop}px`,
+      transform: `translate3d(0, ${-offset + scrollTop}px, 0)`,
     };
 
     const itemsPerPage = containerHeight / itemSize;
