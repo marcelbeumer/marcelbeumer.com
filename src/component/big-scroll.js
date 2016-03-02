@@ -33,6 +33,7 @@ export const styles = StyleSheet.create({
     backgroundColor: '#000',
     border: '2px solid #fff',
     color: '#fff',
+    borderRadius :'6px',
   },
 });
 
