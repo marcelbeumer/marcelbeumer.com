@@ -107,6 +107,10 @@ const styles = StyleSheet.create({
       width: '83px',
     },
   },
+  scroller: {
+    margin: '0 auto',
+    width: '300px',
+  },
   websites: {
     padding: '20px 0',
     marginTop: '50px',

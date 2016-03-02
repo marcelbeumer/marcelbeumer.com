@@ -7,6 +7,7 @@ import ReactIcon from './react-icon';
 import GithubIcon from './github-icon';
 import TwitterIcon from './twitter-icon';
 import LinkedinIcon from './linkedin-icon';
+import BigScroll from './big-scroll';
 import styles from './home-screen-styles';
 
 @pureRender
@@ -40,6 +41,10 @@ export default class HomeScreen extends React.Component {
           target="_blank">
           <ReactIcon />
         </a>
+
+        <div className={styles.scroller}>
+          <BigScroll />
+        </div>
 
         <div className={styles.websites}>
           <a className={styles.githubIcon}
