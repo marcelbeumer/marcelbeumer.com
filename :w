@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
     position: 'relative',
     overflow: 'hidden',
     overflowY: 'scroll',
-    WebkitOverflowScrolling: 'touch',
+    '-webkit-overflow-scrolling': 'touch',
   },
   spacer: {
   },
@@ -63,13 +63,13 @@ export default class BigScroll extends React.Component {
 
   @autobind
   onItemClick() {
-    // console.log('item clicked');
+    console.log('item clicked');
   }
 
   getItemRenderCount() {
     const { props } = this;
     const { itemSize, containerHeight } = props;
-    return Math.ceil(containerHeight / itemSize) * 5;
+    return Math.ceil(containerHeight / itemSize) * 2;
   }
 
   renderItemContent(num) {
@@ -116,9 +116,7 @@ export default class BigScroll extends React.Component {
     const offset = inside * containerHeight;
 
     const itemContainerStyle = {
-      // transform: `translateZ(0) translateY(${-offset}px)`,
-      transform: `translateZ(0) translateY(${-offset + scrollTop}px)`,
-      // top: `${-offset + scrollTop}px`,
+      transform: `translateY(${-offset}px)`,
     };
 
     const itemsPerPage = containerHeight / itemSize;
@@ -127,8 +125,7 @@ export default class BigScroll extends React.Component {
     return (
       <div className={styles.root}
         style={rootStyle}
-        ref={this.onScrollerRef}
-        onScroll={this.onScroll}>
+        ref={this.onScrollerRef}>
         <div className={styles.itemContainer} style={itemContainerStyle}>
           {this.renderItems(start)}
         </div>
