@@ -26,6 +26,12 @@ export function reload(initial) {
 
 reload(true);
 
+// export const reload = hotreload(`${__dirname}/..`, () => {
+//   renderHomepage = require('./render-homepage').default;
+// });
+
+// reload({ initial: true });
+
 app.get('/', (req, res) => {
   res.send(renderHomepage());
 });
