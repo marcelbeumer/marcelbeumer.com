@@ -121,7 +121,7 @@ export default class BigScroll extends React.Component {
     const offset = inside * containerHeight;
 
     const itemContainerStyle = {
-      transform: `translateY(${-offset}px)`,
+      transform: `translate3d(0, ${-offset}px, 0)`,
     };
 
     const itemsPerPage = containerHeight / itemSize;
