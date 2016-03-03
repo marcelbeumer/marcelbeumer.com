@@ -7,6 +7,7 @@ export default {
   secondaryBorderColor: '#000',
   textColor: '#000',
   inverseTextColor: '#fff',
+  baseBorderRadius: 3,
   media: {
     fromTablet: '@media screen and (min-width: 600px)',
     fromDesktop: '@media screen and (min-width: 800px)',

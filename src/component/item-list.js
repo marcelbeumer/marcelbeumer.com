@@ -16,6 +16,7 @@ export const styles = StyleSheet.create({
     margin: `0 0 ${itemMargin}px 0`,
     backgroundColor: theme.highlightColor,
     color: theme.inverseTextColor,
+    borderRadius: px(theme.baseBorderRadius),
   },
 });
 

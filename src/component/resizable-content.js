@@ -24,6 +24,7 @@ export const styles = StyleSheet.create({
     height: px(15),
     margin: '0 auto',
     backgroundColor: theme.highlightColor,
+    borderRadius: `0 0 ${theme.baseBorderRadius}px ${theme.baseBorderRadius}px`,
   },
 });
 

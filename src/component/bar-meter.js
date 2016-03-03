@@ -2,7 +2,7 @@ import React from 'react';
 import { List } from 'immutable';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import pureRender from 'pure-render-decorator';
-import StyleSheet from './styles';
+import StyleSheet, { px } from './styles';
 import theme from './theme';
 
 const { number, func } = React.PropTypes;
@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
   bar: {
     height: '1em',
     backgroundColor: barColor,
-    borderRadius: '2px',
+    borderRadius: px(theme.baseBorderRadius),
     margin: '0 0 5px 0',
   },
 });
