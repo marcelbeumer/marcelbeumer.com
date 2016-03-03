@@ -14,8 +14,7 @@ export const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   content: {
-    overflow: 'auto',
-    marginRight: '-15px',
+    overflow: 'hidden',
     borderBottom: `1px solid ${theme.highlightColor}`,
   },
   handle: {
@@ -25,6 +24,13 @@ export const styles = StyleSheet.create({
     margin: '0 auto',
     backgroundColor: theme.highlightColor,
     borderRadius: `0 0 ${theme.baseBorderRadius}px ${theme.baseBorderRadius}px`,
+  },
+  scrollbarSizer: {
+    position: 'absolute',
+    top: '-9999px',
+    width: '100px',
+    height: '100px',
+    overflow: 'scroll',
   },
 });
 
@@ -42,7 +48,6 @@ export default class ResizableContent extends React.Component {
 
   static defaultProps = {
     scrollTop: 0,
-    height: 100,
     onResize: () => null,
     onScroll: () => null,
   }
@@ -50,6 +55,8 @@ export default class ResizableContent extends React.Component {
   componentDidMount() {
     this._usesScrollTop = true;
     this._innerContent.style.top = 0;
+    this._content.style.overflow = 'auto';
+    this._content.style.marginRight = px(-this.getScrollbarWidth());
     this._content.scrollTop = this.props.scrollTop;
   }
 
@@ -74,6 +81,11 @@ export default class ResizableContent extends React.Component {
     }
   }
 
+  getScrollbarWidth() {
+    const el = this._scrollBarSizer;
+    return el.offsetWidth - el.clientWidth;
+  }
+
   render() {
     const { height, scrollTop } = this.props;
 
@@ -89,6 +101,7 @@ export default class ResizableContent extends React.Component {
     return (
       <DraggableCore handle={`.${styles.handle}`} onDrag={this.onDrag}>
         <div className={styles.root}>
+          <div className={styles.scrollbarSizer} ref={this.onRef('_scrollBarSizer')} />
           <div ref={this.onRef('_content')}
             className={styles.content}
             style={contentStyle}
