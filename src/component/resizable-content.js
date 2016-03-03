@@ -42,6 +42,7 @@ export default class ResizableContent extends React.Component {
 
   static defaultProps = {
     scrollTop: 0,
+    height: 100,
     onResize: () => null,
     onScroll: () => null,
   }
