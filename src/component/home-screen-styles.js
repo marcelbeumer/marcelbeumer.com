@@ -110,7 +110,13 @@ const styles = StyleSheet.create({
   widgets: {
     margin: '0 auto',
     padding: '65px 0 20px',
-    width: '355px',
+    width: '170px',
+    [theme.media.fromTablet]: {
+      width: '270px',
+    },
+    [theme.media.fromDesktop]: {
+      width: '354px',
+    },
   },
   websites: {
     padding: '20px 0',

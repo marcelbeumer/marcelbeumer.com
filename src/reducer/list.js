@@ -14,9 +14,7 @@ function setListStart(start, state) {
   let list = state.list;
   const value = getStart(start, state);
 
-  if (value + minGap > list.end) {
-    list = list.set('end', value + minGap);
-  }
+  if (value + minGap > list.end) list = list.set('end', value + minGap);
 
   list = list.set('start', value);
   return state.set('list', list);
@@ -26,9 +24,7 @@ function setListEnd(end, state) {
   let list = state.list;
   const value = getEnd(end, state);
 
-  if (value - minGap < list.start) {
-    list = list.set('start', value - minGap);
-  }
+  if (value - minGap < list.start) list = list.set('start', value - minGap);
 
   list = list.set('end', value);
   return state.set('list', list);
