@@ -107,6 +107,8 @@ const styles = StyleSheet.create({
       width: '83px',
     },
   },
+  widgets: {
+  },
   websites: {
     padding: '20px 0',
     marginTop: '50px',

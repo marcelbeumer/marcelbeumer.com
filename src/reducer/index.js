@@ -1,16 +1,8 @@
 /* eslint no-nested-ternary:0 */
-import { generateDots, generateBars } from '../data/util';
-
-function updateSliders(state, { index, value }) {
-  return state.set('sliders', state.get('sliders').set(index, value));
-}
-
 export default function reducer(state, action = {}) {
   const { type, payload } = action;
-  return type === 'SET_GREETING' ? state.set('greeting', payload) :
-    type === 'GENERATE_DOTS' ? state.set('dots', generateDots(state.get('dots').count())) :
-    type === 'GENERATE_BARS' ? state.set('bars', generateBars(state.get('bars').count())) :
-    type === 'UPDATE_SLIDERS' ? updateSliders(state, payload) :
-    type === 'SET_RESIZABLE_CONTENT_HEIGHT' ? state.set('resizableContentHeight', payload) :
+  return type === 'SET_LIST_SIZE' ? state.setIn(['list', 'size'], payload) :
+    type === 'SET_LIST_START' ? state.setIn(['list', 'start'], payload) :
+    type === 'SET_LIST_END' ? state.setIn(['list', 'end'], payload) :
     state;
 }
