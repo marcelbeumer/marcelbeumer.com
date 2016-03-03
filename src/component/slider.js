@@ -61,8 +61,8 @@ export default class Slider extends React.Component {
 
   changeValue(value, updatedValue, grippy) {
     const { values } = this.props;
-    const index = values.indexOf(value);
-    this.props.onChange(values.set(index, updatedValue), index, updatedValue);
+    const index = values.lastIndexOf(value);
+    if (index !== -1) this.props.onChange(values.set(index, updatedValue), index, updatedValue);
     if (grippy) grippy.props.onChange(updatedValue);
   }
 

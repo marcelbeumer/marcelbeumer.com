@@ -67,7 +67,9 @@ export default class ResizableContent extends React.Component {
   @autobind
   onScroll() {
     const { scrollTop } = this._content;
-    this.props.onScroll(scrollTop);
+    if (scrollTop !== Math.floor(this.props.scrollTop)) {
+      this.props.onScroll(scrollTop);
+    }
   }
 
   render() {

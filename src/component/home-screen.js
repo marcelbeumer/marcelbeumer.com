@@ -12,6 +12,7 @@ import GithubIcon from './github-icon';
 import TwitterIcon from './twitter-icon';
 import LinkedinIcon from './linkedin-icon';
 import Slider from './slider';
+import SliderGrippy from './slider-grippy';
 import BarMeter from './bar-meter';
 import ItemList from './item-list';
 import ResizableContent from './resizable-content';
@@ -33,12 +34,15 @@ export default class HomeScreen extends React.Component {
   }
 
   @autobind
-  onSliderChange(values) {
+  onSliderStartChange(value) {
     const { actions, list } = this.props;
-    actions.setListRange(
-      values.get(0) * list.length,
-      values.get(1) * list.length,
-    );
+    actions.setListStart(value * list.length);
+  }
+
+  @autobind
+  onSliderEndChange(value) {
+    const { actions, list } = this.props;
+    actions.setListEnd(value * list.length);
   }
 
   @autobind
@@ -64,7 +68,6 @@ export default class HomeScreen extends React.Component {
     const startRatio = list.start / list.length;
     const endRatio = list.end / list.length;
 
-    const sliderValues = new List([startRatio, endRatio]);
     const barValues = new List([startRatio, endRatio]);
     const listItems = new List(range(length).map(num => String(num)));
     const itemHeight = ItemList.defaultProps.itemHeight;
@@ -101,7 +104,10 @@ export default class HomeScreen extends React.Component {
 
         <div className={styles.widgets}>
           <BarMeter values={barValues} />
-          <Slider values={sliderValues} onChange={this.onSliderChange} />
+          <Slider>
+            <SliderGrippy value={startRatio} onChange={this.onSliderStartChange} />
+            <SliderGrippy value={endRatio} onChange={this.onSliderEndChange} />
+          </Slider>
           <ResizableContent
             height={listHeight}
             scrollTop={scrollTop}
