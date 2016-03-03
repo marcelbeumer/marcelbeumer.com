@@ -1,8 +1,9 @@
 import React from 'react';
 import pureRender from 'pure-render-decorator';
 import autobind from 'autobind-decorator';
+import refs from './refs-decorator';
 import { DraggableCore } from 'react-draggable';
-import StyleSheet from './styles';
+import StyleSheet, { px } from './styles';
 import theme from './theme';
 
 const { any, number, func } = React.PropTypes;
@@ -10,71 +11,89 @@ const { max } = Math;
 
 export const styles = StyleSheet.create({
   root: {
-    position: 'relative',
-    border: `1px solid ${theme.primaryBorderColor}`,
     overflow: 'hidden',
-    padding: '10px',
+  },
+  content: {
+    overflow: 'auto',
+    marginRight: '-15px',
+    borderBottom: `1px solid ${theme.highlightColor}`,
   },
   handle: {
-    position: 'absolute',
-    bottom: '0',
-    left: '0',
-    right: '0',
-    textAlign: 'center',
     cursor: 'pointer',
-    borderTop: `1px solid ${theme.primaryBorderColor}`,
-    color: theme.secondaryBorderColor,
-    backgroundColor: theme.backgroundColor,
-    ':after': {
-      display: 'inline-block',
-      content: '"="',
-      transform: 'scaleX(10) scaleY(0.8)',
-    },
+    width: px(60),
+    height: px(15),
+    margin: '0 auto',
+    backgroundColor: theme.highlightColor,
   },
 });
 
+@refs
 @pureRender
 export default class ResizableContent extends React.Component {
 
   static propTypes = {
     children: any,
     height: number,
+    scrollTop: number,
     onResize: func,
+    onScroll: func,
   }
 
   static defaultProps = {
+    scrollTop: 0,
     onResize: () => null,
+    onScroll: () => null,
+  }
+
+  componentDidMount() {
+    this._usesScrollTop = true;
+    this._innerContent.style.top = 0;
+    this._content.scrollTop = this.props.scrollTop;
+  }
+
+  componentDidUpdate() {
+    this._content.scrollTop = this.props.scrollTop;
   }
 
   @autobind
   onDrag(e, ui) {
-    const { top: rootTop } = this.root.getBoundingClientRect();
-    const { height: handleHeight } = this.handle.getBoundingClientRect();
+    const { top: rootTop } = this._content.getBoundingClientRect();
+    const { height: handleHeight } = this._handle.getBoundingClientRect();
     const { clientY } = ui.position;
     const value = clientY - rootTop;
     this.props.onResize(max(handleHeight, value));
   }
 
   @autobind
-  onRootRef(root) {
-    this.root = root;
-  }
-
-  @autobind
-  onHandleRef(handle) {
-    this.handle = handle;
+  onScroll() {
+    const { scrollTop } = this._content;
+    this.props.onScroll(scrollTop);
   }
 
   render() {
-    const { height } = this.props;
-    const style = {
+    const { height, scrollTop } = this.props;
+
+    const contentStyle = {
       height: `${height}px`,
     };
+
+    const innerContentStyle = {
+      position: 'relative',
+      top: this._usesScrollTop ? 0 : `-${scrollTop}px`,
+    };
+
     return (
       <DraggableCore handle={`.${styles.handle}`} onDrag={this.onDrag}>
-        <div className="resizable-content" ref={this.onRootRef} style={style}>
-          {this.props.children}
-          <div className={styles.handle} ref={this.onHandleRef} />
+        <div className={styles.root}>
+          <div ref={this.onRef('_content')}
+            className={styles.content}
+            style={contentStyle}
+            onScroll={this.onScroll}>
+            <div ref={this.onRef('_innerContent')} style={innerContentStyle}>
+              {this.props.children}
+            </div>
+          </div>
+          <div className={styles.handle} ref={this.onRef('_handle')} />
         </div>
       </DraggableCore>
     );

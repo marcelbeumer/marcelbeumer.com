@@ -22,8 +22,9 @@ export const styles = StyleSheet.create({
     position: 'absolute',
     top: '50%',
     width: '100%',
-    height: '2px',
-    backgroundColor: theme.primaryBorderColor,
+    height: '0',
+    border: `1px solid ${theme.primaryBorderColor}`,
+    borderWidth: '1px 0 0 0',
   },
 });
 
@@ -43,10 +44,12 @@ export default class Slider extends React.Component {
 
   @autobind
   onDrag(e, ui, grippy) {
+    const { clientX } = ui.position;
+    if (isNaN(clientX)) return;
+
     const { width, left } = this.root.getBoundingClientRect();
     const ratio = 100 / width;
     const { value } = grippy.props;
-    const { clientX } = ui.position;
     const updatedValue = min(max((clientX - left) * ratio / 100, 0), 1);
     this.changeValue(value, updatedValue, grippy);
   }
@@ -58,13 +61,16 @@ export default class Slider extends React.Component {
 
   changeValue(value, updatedValue, grippy) {
     const { values } = this.props;
-    this.props.onChange(values.indexOf(value), updatedValue);
+    const index = values.indexOf(value);
+    this.props.onChange(values.set(index, updatedValue), index, updatedValue);
     if (grippy) grippy.props.onChange(updatedValue);
   }
 
   cloneChildren() {
     return React.Children.map(this.props.children, child =>
-      child.type === SliderGrippy ? React.cloneElement(child, { onDrag: this.onDrag }) :
+      child.type === SliderGrippy ? React.cloneElement(child, {
+        onDrag: this.onDrag,
+      }) :
       child);
   }
 

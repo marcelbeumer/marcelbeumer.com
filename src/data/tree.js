@@ -4,9 +4,9 @@ import ListData from './list';
 
 const TreeData = Record({
   list: new ListData({
-    length: 200,
-    start: 0,
-    end: 3.5,
+    length: 30,
+    start: 13,
+    end: 16.2,
   }),
 });
 

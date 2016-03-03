@@ -1,5 +1,9 @@
 import React from 'react';
+import { range } from 'lodash';
+import { List } from 'immutable';
 import pureRender from 'pure-render-decorator';
+import autobind from 'autobind-decorator';
+import ImmutablePropTypes from 'react-immutable-proptypes';
 import SiteLogo from './site-logo';
 import SpeechBubble from './speech-bubble';
 import JavaScriptIcon from './javascript-icon';
@@ -8,12 +12,65 @@ import GithubIcon from './github-icon';
 import TwitterIcon from './twitter-icon';
 import LinkedinIcon from './linkedin-icon';
 import Slider from './slider';
+import BarMeter from './bar-meter';
+import ItemList from './item-list';
+import ResizableContent from './resizable-content';
 import styles from './home-screen-styles';
+
+const { number, object } = React.PropTypes;
+const { recordOf } = ImmutablePropTypes;
 
 @pureRender
 export default class HomeScreen extends React.Component {
 
+  static propTypes = {
+    actions: object,
+    list: recordOf({
+      length: number,
+      start: number,
+      end: number,
+    }),
+  }
+
+  @autobind
+  onSliderChange(values) {
+    const { actions, list } = this.props;
+    actions.setListRange(
+      values.get(0) * list.length,
+      values.get(1) * list.length,
+    );
+  }
+
+  @autobind
+  onListResize(height) {
+    const { actions, list } = this.props;
+    const itemHeight = ItemList.defaultProps.itemHeight;
+    actions.setListEnd(list.start + (height / itemHeight));
+  }
+
+  @autobind
+  onListScroll(scrollTop) {
+    const { actions, list } = this.props;
+    const itemHeight = ItemList.defaultProps.itemHeight;
+    const items = list.end - list.start;
+    const start = scrollTop / itemHeight;
+    const end = start + items;
+    actions.setListRange(start, end);
+  }
+
   render() {
+    const { list } = this.props;
+    const length = list.length;
+    const startRatio = list.start / list.length;
+    const endRatio = list.end / list.length;
+
+    const sliderValues = new List([startRatio, endRatio]);
+    const barValues = new List([startRatio, endRatio]);
+    const listItems = new List(range(length).map(num => String(num)));
+    const itemHeight = ItemList.defaultProps.itemHeight;
+    const listHeight = ((endRatio - startRatio) * length) * itemHeight;
+    const scrollTop = list.start * itemHeight;
+
     return (
       <div className={styles.root}>
         <div className={styles.logoContainer}>
@@ -43,6 +100,15 @@ export default class HomeScreen extends React.Component {
         </a>
 
         <div className={styles.widgets}>
+          <BarMeter values={barValues} />
+          <Slider values={sliderValues} onChange={this.onSliderChange} />
+          <ResizableContent
+            height={listHeight}
+            scrollTop={scrollTop}
+            onResize={this.onListResize}
+            onScroll={this.onListScroll}>
+            <ItemList items={listItems} />
+          </ResizableContent>
         </div>
 
         <div className={styles.websites}>
