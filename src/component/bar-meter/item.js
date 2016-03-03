@@ -40,14 +40,12 @@ export default class BarMeterItem extends React.Component {
   render() {
     const { value } = this.props;
     return (
-      <div>
-        <DraggableCore onDrag={this.onDrag}>
-          <div className={styles.bar} style={{
-            transform: `translateX(-50%) scaleX(${value}) translateX(50%)`,
-            backgroundColor: barColor,
-          }} />
-        </DraggableCore>
-      </div>
+      <DraggableCore onDrag={this.onDrag}>
+        <div className={styles.bar} style={{
+          transform: `translateX(-50%) scaleX(${value}) translateX(50%)`,
+          backgroundColor: barColor,
+        }} />
+      </DraggableCore>
     );
   }
 }
