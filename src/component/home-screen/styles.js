@@ -1,5 +1,5 @@
-import StyleSheet from './styles';
-import theme from './theme';
+import StyleSheet from '../styles';
+import theme from '../theme';
 
 const websiteIconShared = {
   display: 'inline-block',

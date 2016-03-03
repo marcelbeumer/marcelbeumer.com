@@ -3,10 +3,12 @@ import { List } from 'immutable';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import pureRender from 'pure-render-decorator';
 import autobind from 'autobind-decorator';
-import refs from './refs-decorator';
-import SliderGrippy from './slider-grippy';
-import StyleSheet from './styles';
-import theme from './theme';
+import refs from '../refs-decorator';
+import SliderGrippy from './grippy';
+import StyleSheet from '../styles';
+import theme from '../theme';
+
+export SliderGrippy from './grippy';
 
 const { func, any, number } = React.PropTypes;
 const { listOf } = ImmutablePropTypes;

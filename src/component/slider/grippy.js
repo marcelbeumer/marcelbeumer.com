@@ -2,8 +2,8 @@ import React from 'react';
 import { DraggableCore } from 'react-draggable';
 import pureRender from 'pure-render-decorator';
 import autobind from 'autobind-decorator';
-import StyleSheet, { px } from './styles';
-import theme from './theme';
+import StyleSheet, { px } from '../styles';
+import theme from '../theme';
 
 const { number, func } = React.PropTypes;
 
