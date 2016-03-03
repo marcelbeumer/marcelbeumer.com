@@ -3,39 +3,22 @@ import { List } from 'immutable';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import pureRender from 'pure-render-decorator';
 import autobind from 'autobind-decorator';
-import refs from './refs-decorator';
-import SliderGrippy from './slider-grippy';
-import StyleSheet from './styles';
-import theme from './theme';
+import refs from '../refs-decorator';
+import BarMeterItem from './item';
 
-const { func, any, number } = React.PropTypes;
-const { listOf } = ImmutablePropTypes;
+export BarMeterItem from './item';
+
 const { min, max } = Math;
-
-export const styles = StyleSheet.create({
-  slider: {
-    width: '100%',
-    height: '100%',
-    position: 'relative',
-    minHeight: '50px',
-  },
-  line: {
-    position: 'absolute',
-    top: '50%',
-    width: '100%',
-    height: '0',
-    border: `1px solid ${theme.primaryBorderColor}`,
-    borderWidth: '1px 0 0 0',
-  },
-});
+const { number, func, array } = React.PropTypes;
+const { listOf } = ImmutablePropTypes;
 
 @refs
 @pureRender
-export default class Slider extends React.Component {
+export default class BarMeter extends React.Component {
 
   static propTypes = {
+    children: array,
     values: listOf(number),
-    children: any,
     onChange: func,
   }
 
@@ -45,27 +28,28 @@ export default class Slider extends React.Component {
   }
 
   @autobind
-  onDrag(e, ui, grippy) {
+  onDrag(e, ui, item) {
     const { deltaX } = ui.position;
     if (isNaN(deltaX)) return;
 
     const { width } = this._root.getBoundingClientRect();
     const ratio = 1 / width;
-    const { value } = grippy.props;
+    const { value } = item.props;
+
     const updatedValue = min(max(value + (deltaX * ratio), 0), 1);
-    this.changeValue(value, updatedValue, grippy);
+    this.changeValue(value, updatedValue, item);
   }
 
-  changeValue(value, updatedValue, grippy) {
+  changeValue(value, updatedValue, item) {
     const { values } = this.props;
     const index = values.lastIndexOf(value);
     if (index !== -1) this.props.onChange(values.set(index, updatedValue), index, updatedValue);
-    if (grippy) grippy.props.onChange(updatedValue);
+    if (item) item.props.onChange(updatedValue);
   }
 
   cloneChildren() {
     return React.Children.map(this.props.children, child =>
-      child.type === SliderGrippy ? React.cloneElement(child, {
+      child.type === BarMeterItem ? React.cloneElement(child, {
         onDrag: this.onDrag,
       }) :
       child);
@@ -74,13 +58,12 @@ export default class Slider extends React.Component {
   renderValues() {
     const { values } = this.props;
     return values.map((value, i) =>
-      <SliderGrippy key={`slider-${i}`} onDrag={this.onDrag} value={value} />);
+      <BarMeterItem key={`bar-${i}`} value={value} onDrag={this.onDrag} />);
   }
 
   render() {
     return (
-      <div className={styles.slider} ref={this.onRef('_root')}>
-        <div className={styles.line} />
+      <div ref={this.onRef('_root')}>
         {this.cloneChildren()}
         {this.renderValues()}
       </div>

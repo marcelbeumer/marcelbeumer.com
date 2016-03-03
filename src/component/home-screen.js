@@ -13,7 +13,7 @@ import TwitterIcon from './twitter-icon';
 import LinkedinIcon from './linkedin-icon';
 import Slider from './slider';
 import SliderGrippy from './slider-grippy';
-import BarMeter from './bar-meter';
+import BarMeter, { BarMeterItem } from './bar-meter';
 import ItemList from './item-list';
 import ResizableContent from './resizable-content';
 import styles from './home-screen-styles';
@@ -34,13 +34,13 @@ export default class HomeScreen extends React.Component {
   }
 
   @autobind
-  onSliderStartChange(value) {
+  onStartChange(value) {
     const { actions, list } = this.props;
     actions.setListStart(value * list.length);
   }
 
   @autobind
-  onSliderEndChange(value) {
+  onEndChange(value) {
     const { actions, list } = this.props;
     actions.setListEnd(value * list.length);
   }
@@ -68,7 +68,6 @@ export default class HomeScreen extends React.Component {
     const startRatio = list.start / list.length;
     const endRatio = list.end / list.length;
 
-    const barValues = new List([startRatio, endRatio]);
     const listItems = new List(range(length).map(num => String(num)));
     const itemHeight = ItemList.defaultProps.itemHeight;
     const listHeight = ((endRatio - startRatio) * length) * itemHeight;
@@ -103,10 +102,13 @@ export default class HomeScreen extends React.Component {
         </a>
 
         <div className={styles.widgets}>
-          <BarMeter values={barValues} />
+          <BarMeter>
+            <BarMeterItem value={startRatio} onChange={this.onStartChange} />
+            <BarMeterItem value={endRatio} onChange={this.onEndChange} />
+          </BarMeter>
           <Slider>
-            <SliderGrippy value={startRatio} onChange={this.onSliderStartChange} />
-            <SliderGrippy value={endRatio} onChange={this.onSliderEndChange} />
+            <SliderGrippy value={startRatio} onChange={this.onStartChange} />
+            <SliderGrippy value={endRatio} onChange={this.onEndChange} />
           </Slider>
           <ResizableContent
             height={listHeight}
