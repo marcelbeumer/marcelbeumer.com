@@ -109,12 +109,14 @@ const styles = StyleSheet.create({
   },
   widgets: {
     margin: '0 auto',
-    padding: '65px 0 20px',
+    padding: '35px 0 20px',
     width: '170px',
     [theme.media.fromTablet]: {
+      padding: '45px 0 20px',
       width: '270px',
     },
     [theme.media.fromDesktop]: {
+      padding: '65px 0 20px',
       width: '354px',
     },
   },

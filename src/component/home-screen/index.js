@@ -3,6 +3,7 @@ import { range } from 'lodash';
 import { List } from 'immutable';
 import pureRender from 'pure-render-decorator';
 import autobind from 'autobind-decorator';
+import refs from '../refs-decorator';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import SiteLogo from '../site-logo';
 import SpeechBubble from '../speech-bubble';
@@ -20,6 +21,7 @@ import styles from './styles';
 const { number, object } = React.PropTypes;
 const { recordOf } = ImmutablePropTypes;
 
+@refs
 @pureRender
 export default class HomeScreen extends React.Component {
 
@@ -47,14 +49,14 @@ export default class HomeScreen extends React.Component {
   @autobind
   onListResize(height) {
     const { actions, list } = this.props;
-    const itemHeight = ItemList.defaultProps.itemHeight;
+    const itemHeight = this._itemList.props.itemHeight;
     actions.setListEnd(list.start + (height / itemHeight));
   }
 
   @autobind
   onListScroll(scrollTop) {
     const { actions, list } = this.props;
-    const itemHeight = ItemList.defaultProps.itemHeight;
+    const itemHeight = this._itemList.props.itemHeight;
     const items = list.end - list.start;
     const start = scrollTop / itemHeight;
     const end = start + items;
@@ -114,7 +116,10 @@ export default class HomeScreen extends React.Component {
             scrollTop={scrollTop}
             onResize={this.onListResize}
             onScroll={this.onListScroll}>
-            <ItemList items={listItems} />
+            <ItemList
+              items={listItems}
+              itemHeight={itemHeight}
+              ref={this.onRef('_itemList')} />
           </ResizableContent>
         </div>
 
