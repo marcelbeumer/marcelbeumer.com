@@ -5,13 +5,15 @@ import pureRender from 'pure-render-decorator';
 import StyleSheet, { px } from './styles';
 import theme from './theme';
 
-const { number, string, func } = React.PropTypes;
+const { number, string } = React.PropTypes;
 const { listOf } = ImmutablePropTypes;
+const itemMargin = 2;
 
 export const styles = StyleSheet.create({
   root: {
   },
   item: {
+    margin: `0 0 ${itemMargin}px 0`,
     backgroundColor: theme.highlightColor,
     color: theme.inverseTextColor,
     borderRadius: px(theme.baseBorderRadius),
@@ -24,21 +26,19 @@ export default class ItemList extends React.Component {
   static propTypes = {
     items: listOf(string),
     itemHeight: number,
-    itemMargin: number,
-    unitFn: func,
   }
 
   static defaultProps = {
     items: new List(),
     itemHeight: 60,
-    unitFn: px,
   }
 
   renderItems() {
-    const { unitFn, items, itemHeight } = this.props;
+    const { items, itemHeight } = this.props;
+    const height = itemHeight - itemMargin;
     const itemStyle = {
-      height: unitFn(itemHeight),
-      lineHeight: unitFn(itemHeight),
+      height: px(height),
+      lineHeight: px(height),
     };
     return items.map((value, i) =>
       <div className={styles.item} style={itemStyle} key={`item-${i}`}>

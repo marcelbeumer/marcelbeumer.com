@@ -41,7 +41,6 @@ export default class ResizableContent extends React.Component {
   static propTypes = {
     children: any,
     height: number,
-    unitFn: func,
     scrollTop: number,
     onResize: func,
     onScroll: func,
@@ -49,7 +48,6 @@ export default class ResizableContent extends React.Component {
 
   static defaultProps = {
     scrollTop: 0,
-    unitFn: px,
     onResize: () => null,
     onScroll: () => null,
   }
@@ -89,10 +87,10 @@ export default class ResizableContent extends React.Component {
   }
 
   render() {
-    const { unitFn, height, scrollTop } = this.props;
+    const { height, scrollTop } = this.props;
 
     const contentStyle = {
-      height: unitFn(height),
+      height: `${height}px`,
     };
 
     const innerContentStyle = {

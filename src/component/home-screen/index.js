@@ -17,7 +17,6 @@ import BarMeter, { BarMeterItem } from '../bar-meter';
 import ItemList from '../item-list';
 import ResizableContent from '../resizable-content';
 import styles from './styles';
-import { px } from '../styles';
 
 const { number, object } = React.PropTypes;
 const { recordOf } = ImmutablePropTypes;
@@ -71,7 +70,7 @@ export default class HomeScreen extends React.Component {
     const endRatio = list.end / list.length;
 
     const listItems = new List(range(length).map(num => String(num)));
-    const itemHeight = 60;
+    const itemHeight = ItemList.defaultProps.itemHeight;
     const listHeight = ((endRatio - startRatio) * length) * itemHeight;
     const scrollTop = list.start * itemHeight;
 
@@ -114,14 +113,12 @@ export default class HomeScreen extends React.Component {
           </Slider>
           <ResizableContent
             height={listHeight}
-            unitFn={px}
             scrollTop={scrollTop}
             onResize={this.onListResize}
             onScroll={this.onListScroll}>
             <ItemList
               items={listItems}
               itemHeight={itemHeight}
-              unitFn={px}
               ref={this.onRef('_itemList')} />
           </ResizableContent>
         </div>
