@@ -33,12 +33,14 @@ export default class ItemList extends React.Component {
     itemHeight: 60,
   }
 
+  getItemHeight() {
+    return this.props.itemHeight - itemMargin;
+  }
+
   renderItems() {
-    const { items, itemHeight } = this.props;
-    const height = itemHeight - itemMargin;
+    const { items } = this.props;
     const itemStyle = {
-      height: px(height),
-      lineHeight: px(height),
+      height: px(this.getItemHeight()),
     };
     return items.map((value, i) =>
       <div className={styles.item} style={itemStyle} key={`item-${i}`}>
@@ -48,8 +50,12 @@ export default class ItemList extends React.Component {
   }
 
   render() {
+    const rootStyle = {
+      lineHeight: px(this.getItemHeight()),
+    };
+
     return (
-      <div className={styles.root}>
+      <div className={styles.root} style={rootStyle}>
         {this.renderItems()}
       </div>
     );
