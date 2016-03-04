@@ -3,7 +3,6 @@ import { range } from 'lodash';
 import { List } from 'immutable';
 import pureRender from 'pure-render-decorator';
 import autobind from 'autobind-decorator';
-import refs from '../refs-decorator';
 import Slider, { SliderGrippy } from '../slider';
 import BarMeter, { BarMeterItem } from '../bar-meter';
 import ItemList from '../item-list';
@@ -23,7 +22,6 @@ const styles = StyleSheet.create({
   },
 });
 
-@refs
 @pureRender
 export default class HomeScreenWidgets extends React.Component {
 
