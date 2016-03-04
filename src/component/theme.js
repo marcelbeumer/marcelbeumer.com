@@ -1,4 +1,6 @@
-export default {
+import StyleSheet from './styles';
+
+const theme = {
   fontFamily: 'Helvetica, sans-serif',
   fontWeight: '100',
   backgroundColor: '#fff',
@@ -13,3 +15,14 @@ export default {
     fromDesktop: '@media screen and (min-width: 800px)',
   },
 };
+
+// Workaround to force media queries to proper order
+StyleSheet.create({
+  __: Object.keys(theme.media).reduce((p, c, i) => {
+    const rules = p;
+    rules[theme.media[c]] = { fontSize: i };
+    return rules;
+  }, {}),
+});
+
+export default theme;

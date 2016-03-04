@@ -44,38 +44,48 @@ export default class ResizableContent extends React.Component {
     scrollTop: number,
     onResize: func,
     onScroll: func,
+    toUnit: func,
+    fromPx: func,
+    toPx: func,
   }
 
   static defaultProps = {
     scrollTop: 0,
     onResize: () => null,
     onScroll: () => null,
+    toUnit: px,
+    fromPx: val => val,
+    toPx: val => val,
   }
 
   componentDidMount() {
+    const { toPx } = this.props;
     this._usesScrollTop = true;
     this._innerContent.style.top = 0;
     this._content.style.overflow = 'auto';
     this._content.style.marginRight = px(-this.getScrollbarWidth());
-    this._content.scrollTop = this.props.scrollTop;
+    this._content.scrollTop = toPx(this.props.scrollTop);
   }
 
   componentDidUpdate() {
-    this._content.scrollTop = this.props.scrollTop;
+    const { toPx } = this.props;
+    this._content.scrollTop = toPx(this.props.scrollTop);
   }
 
   @autobind
   onDrag(e, ui) {
+    const { fromPx } = this.props;
     const { top: rootTop } = this._content.getBoundingClientRect();
     const { height: handleHeight } = this._handle.getBoundingClientRect();
     const { clientY } = ui.position;
     const value = clientY - rootTop;
-    this.props.onResize(max(handleHeight, value));
+    this.props.onResize(fromPx(max(handleHeight, value)));
   }
 
   @autobind
   onScroll() {
-    const { scrollTop } = this._content;
+    const { fromPx } = this.props;
+    const scrollTop = fromPx(this._content.scrollTop);
     if (scrollTop !== Math.floor(this.props.scrollTop)) {
       this.props.onScroll(scrollTop);
     }
@@ -87,15 +97,15 @@ export default class ResizableContent extends React.Component {
   }
 
   render() {
-    const { height, scrollTop } = this.props;
+    const { height, scrollTop, toUnit } = this.props;
 
     const contentStyle = {
-      height: `${height}px`,
+      height: toUnit(height),
     };
 
     const innerContentStyle = {
       position: 'relative',
-      top: this._usesScrollTop ? 0 : `-${scrollTop}px`,
+      top: this._usesScrollTop ? 0 : `-${toUnit(scrollTop)}`,
     };
 
     return (

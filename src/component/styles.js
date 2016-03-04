@@ -1,6 +1,8 @@
 import StyleSheet from 'stilr';
 
 const map = new StyleSheet.Map();
+const { matchMedia } = global;
+
 export const getCss = ({ pretty = false } = {}) => StyleSheet.render({ pretty }, map);
 
 export default class StyleSheetWrapper {
@@ -9,6 +11,21 @@ export default class StyleSheetWrapper {
     sheet.getStyles = () => styles;
     return sheet;
   }
+}
+
+export function resolveMedia(styles) {
+  if (!matchMedia) throw new Error('cant resolve media on non browser environment');
+  const merged = {};
+  Object.keys(styles).forEach(key => {
+    if (/@media /.test(key)) {
+      if (matchMedia(key.replace('@media ', '')).matches) {
+        Object.assign(merged, styles[key]);
+      }
+    } else {
+      merged[key] = styles[key];
+    }
+  });
+  return merged;
 }
 
 export const px = val => `${val}px`;
