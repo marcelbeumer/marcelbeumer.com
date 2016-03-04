@@ -33,7 +33,7 @@ export default class HomeScreen extends React.Component {
     const { list, actions } = this.props;
 
     return (
-      <div className={cx(styles.root, styles.rootUp)}>
+      <div className={cx(styles.root)}>
         <div className={styles.logoContainer}>
           <div className={styles.speechBubble}>
             <SpeechBubble />
