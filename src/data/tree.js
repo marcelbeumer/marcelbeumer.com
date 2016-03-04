@@ -3,6 +3,7 @@ import { Record } from 'immutable';
 import ListData from './list';
 
 const TreeData = Record({
+  showBackground: false,
   list: new ListData({
     length: 30,
     start: 13,

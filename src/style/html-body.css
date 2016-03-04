@@ -15,3 +15,7 @@ body {
   background-color: var(--ui-background-color);
   color: var(--ui-text-color);
 }
+
+a {
+  color: inherit;
+}
