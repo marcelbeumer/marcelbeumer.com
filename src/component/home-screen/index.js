@@ -2,7 +2,6 @@ import React from 'react';
 import cx from 'classnames';
 import pureRender from 'pure-render-decorator';
 import refs from '../refs-decorator';
-import ImmutablePropTypes from 'react-immutable-proptypes';
 import SiteLogo from '../site-logo';
 import SpeechBubble from '../speech-bubble';
 import JavaScriptIcon from '../javascript-icon';
@@ -12,9 +11,9 @@ import TwitterIcon from '../twitter-icon';
 import LinkedinIcon from '../linkedin-icon';
 import HomeScreenWidgets from './widgets';
 import styles from './styles';
+import { listType } from './types';
 
-const { number, object } = React.PropTypes;
-const { recordOf } = ImmutablePropTypes;
+const { object } = React.PropTypes;
 
 @refs
 @pureRender
@@ -22,11 +21,7 @@ export default class HomeScreen extends React.Component {
 
   static propTypes = {
     actions: object,
-    list: recordOf({
-      length: number,
-      start: number,
-      end: number,
-    }),
+    list: listType,
   }
 
   render() {

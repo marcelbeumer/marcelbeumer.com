@@ -4,16 +4,15 @@ import { List } from 'immutable';
 import pureRender from 'pure-render-decorator';
 import autobind from 'autobind-decorator';
 import refs from '../refs-decorator';
-import ImmutablePropTypes from 'react-immutable-proptypes';
 import Slider, { SliderGrippy } from '../slider';
 import BarMeter, { BarMeterItem } from '../bar-meter';
 import ItemList from '../item-list';
 import ResizableContent from '../resizable-content';
 import StyleSheet, { em, resolveMedia } from '../styles';
 import theme from '../theme';
+import { listType } from './types';
 
-const { number, object } = React.PropTypes;
-const { recordOf } = ImmutablePropTypes;
+const { object } = React.PropTypes;
 
 const styles = StyleSheet.create({
   fontSizeContainer: {
@@ -30,11 +29,7 @@ export default class HomeScreenWidgets extends React.Component {
 
   static propTypes = {
     actions: object,
-    list: recordOf({
-      length: number,
-      start: number,
-      end: number,
-    }),
+    list: listType,
   }
 
   @autobind
