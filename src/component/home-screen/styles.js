@@ -27,9 +27,6 @@ const styles = StyleSheet.create({
       lineHeight: '20px',
     },
   },
-  h1: {
-    fontSize: '1.3em',
-  },
   foreground: {
     margin: '0 auto',
     minWidth: '320px',

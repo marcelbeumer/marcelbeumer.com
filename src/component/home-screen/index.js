@@ -104,7 +104,6 @@ export default class HomeScreen extends React.Component {
               together within a specific frontend architecture.
             </p>
 
-            <h1 className={styles.h1}>What's awesome about it</h1>
             <p>
               What you see is backed by an efficient frontend
               architecture based on React and Flux/Redux that has
@@ -125,10 +124,10 @@ export default class HomeScreen extends React.Component {
 
             <p>
               Feel free to peek at
-              the <a href="https://github.com/marcelbeumer/marcelbeumer.com">
+              the <a target="_blank" href="https://github.com/marcelbeumer/marcelbeumer.com">
                 source in Github
               </a>. This website is based
-              on <a href="https://github.com/marcelbeumer/react-blueprint">
+              on <a target="_blank" href="https://github.com/marcelbeumer/react-blueprint">
                 @marcelbeumer/react-blueprint.
               </a>
             </p>
