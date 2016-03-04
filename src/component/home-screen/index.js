@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames';
 import pureRender from 'pure-render-decorator';
 import refs from '../refs-decorator';
 import ImmutablePropTypes from 'react-immutable-proptypes';
@@ -32,7 +33,7 @@ export default class HomeScreen extends React.Component {
     const { list, actions } = this.props;
 
     return (
-      <div className={styles.root}>
+      <div className={cx(styles.root, styles.rootUp)}>
         <div className={styles.logoContainer}>
           <div className={styles.speechBubble}>
             <SpeechBubble />

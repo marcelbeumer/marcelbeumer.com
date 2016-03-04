@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
     minWidth: '320px',
     minHeight: '100vh',
     width: '100%',
+    backgroundColor: theme.backgroundColor,
     color: theme.textColor,
     textAlign: 'center',
     paddingTop: '60px',
@@ -25,6 +26,7 @@ const styles = StyleSheet.create({
     fontWeight: theme.fontWeight,
     fontSize: '12px',
     lineHeight: '16px',
+    transition: 'transform 0.8s ease-out',
     [theme.media.fromTablet]: {
       fontSize: '14px',
       lineHeight: '18px',
@@ -35,6 +37,9 @@ const styles = StyleSheet.create({
       lineHeight: '20px',
       paddingTop: '160px',
     },
+  },
+  rootUp: {
+    transform: 'scale(0.8, 0.8) translate(0, -110%)',
   },
   logoContainer: {
     display: 'inline-block',

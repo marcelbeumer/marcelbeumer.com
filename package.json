@@ -38,6 +38,7 @@
     "babel-preset-react": "^6.3.13",
     "babel-preset-stage-0": "^6.3.13",
     "babel-register": "^6.4.3",
+    "classnames": "^2.2.3",
     "clean-css": "^3.4.9",
     "color": "^0.11.1",
     "copy-webpack-plugin": "^1.1.1",
