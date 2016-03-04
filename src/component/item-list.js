@@ -19,6 +19,7 @@ export const styles = StyleSheet.create({
   },
   itemInner: {
     fontSize: '1rem',
+    fontWeight: 'bold',
     backgroundColor: theme.highlightColor,
     color: theme.inverseTextColor,
     borderRadius: px(theme.baseBorderRadius),
