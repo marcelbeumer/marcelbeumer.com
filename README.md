@@ -1,6 +1,6 @@
 # marcelbeumer.com
 
-Website based on [react-starter-kit](https://github.com/marcelbeumer/react-starter-kit).
+Website based on [react-blueprint](https://github.com/marcelbeumer/react-blueprint).
 
 ## Development
 
