@@ -121,20 +121,14 @@ const styles = StyleSheet.create({
       width: '83px',
     },
   },
-  widgets: {
-    margin: '35px auto 35px auto',
-    width: '170px',
+  websites: {
+    margin: '35px 0 20px 0',
     [theme.media.fromTablet]: {
-      margin: '45px auto 45px auto',
-      width: '270px',
+      margin: '45px 0 20px 0',
     },
     [theme.media.fromDesktop]: {
-      margin: '60px auto 60px auto',
-      width: '354px',
+      margin: '60px 0 20px 0',
     },
-  },
-  websites: {
-    margin: '20px 0',
   },
   githubIcon: websiteIconShared,
   twitterIcon: Object.assign({}, websiteIconShared, {

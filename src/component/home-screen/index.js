@@ -39,20 +39,15 @@ export default class HomeScreen extends React.Component {
             I'm a freelancer and I love
           </div>
           <a className={styles.javaScriptIcon}
-            href="https://developer.mozilla.org/docs/Web/JavaScript"
+            href="http://marcelbeumer.github.io/react-blueprint"
             alt="JavaScript">
             <JavaScriptIcon />
           </a>
           <a className={styles.reactIcon}
-            href="https://facebook.github.io/react"
+            href="http://marcelbeumer.github.io/react-blueprint"
             alt="React">
             <ReactIcon />
           </a>
-
-          <div className={styles.widgets}>
-            <Button onClick={actions.gotoDemoPage}><strong>Check demo</strong></Button>
-          </div>
-
 
           <div className={styles.websites}>
             <a className={styles.githubIcon}
