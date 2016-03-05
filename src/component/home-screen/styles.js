@@ -166,7 +166,7 @@ const styles = StyleSheet.create({
     padding: '20px 0',
     marginTop: '50px',
     [theme.media.fromDesktop]: {
-      marginTop: '40px',
+      marginTop: '60px',
     },
   },
   githubIcon: websiteIconShared,
