@@ -50,34 +50,6 @@ const styles = StyleSheet.create({
     width: '100%',
     transform: 'translateZ(0) scale(0.8, 0.8) translate(0, -110%)',
   },
-  background: {
-    zIndex: -1,
-    display: 'none',
-    width: '100%',
-    height: '100%',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    overflow: 'auto',
-    padding: '90px 30px',
-    textAlign: 'center',
-    color: theme.inverseTextColor,
-  },
-  backgroundContent: {
-    textAlign: 'left',
-    margin: '0 auto',
-    maxWidth: '580px',
-  },
-  backgroundShown: {
-    display: 'block',
-  },
-  backgroundControls: {
-    position: 'fixed',
-    top: '50px',
-    left: 0,
-    width: '100%',
-    textAlign: 'center',
-  },
   logoContainer: {
     display: 'inline-block',
     position: 'relative',
@@ -149,24 +121,13 @@ const styles = StyleSheet.create({
       width: '83px',
     },
   },
-  widgets: {
-    margin: '0 auto',
-    padding: '35px 0 20px',
-    width: '170px',
-    [theme.media.fromTablet]: {
-      padding: '45px 0 20px',
-      width: '270px',
-    },
-    [theme.media.fromDesktop]: {
-      padding: '65px 0 20px',
-      width: '354px',
-    },
-  },
   websites: {
-    padding: '20px 0',
-    marginTop: '50px',
+    margin: '35px 0 20px 0',
+    [theme.media.fromTablet]: {
+      margin: '45px 0 20px 0',
+    },
     [theme.media.fromDesktop]: {
-      marginTop: '60px',
+      margin: '60px 0 20px 0',
     },
   },
   githubIcon: websiteIconShared,

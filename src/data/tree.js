@@ -1,19 +1,15 @@
 /* eslint new-cap:0 */
 import { Record } from 'immutable';
-import ListData from './list';
 
 const TreeData = Record({
-  showBackground: false,
-  list: new ListData({
-    length: 30,
-    start: 13,
-    end: 16.2,
-  }),
+  demoPageUrl: 'http://marcelbeumer.github.io/react-blueprint/',
+  githubUrl: 'https://github.com/marcelbeumer/marcelbeumer.com',
+  twitterUrl: 'https://twitter.com/marcelbeumer',
+  linkedinUrl: 'https://linkedin.com/in/marcelbeumer',
 });
 
 TreeData.fromServerData = data => {
   const values = Object.assign({}, data);
-  if (values.list) values.list = new ListData(values.list);
   return TreeData(values);
 };
 
