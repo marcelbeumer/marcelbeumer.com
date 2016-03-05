@@ -123,7 +123,7 @@ export default class HomeScreen extends React.Component {
             <p>
               Feel free to peek at
               the <a target="_blank" href="https://github.com/marcelbeumer/marcelbeumer.com">
-                source in Github
+                source on Github
               </a>. This website is based
               on <a target="_blank" href="https://github.com/marcelbeumer/react-blueprint">
                 @marcelbeumer/react-blueprint.
