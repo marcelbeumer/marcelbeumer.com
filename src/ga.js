@@ -7,3 +7,8 @@ module.exports = function(gaTrackingId) {
   ga('create', gaTrackingId, 'auto');
   ga('send', 'pageview');
 };
+
+module.exports.trackEvent = function(category, action, label, value) {
+  const ga = global.ga;
+  if (ga) ga('send', 'event', category, action, label, value);
+}

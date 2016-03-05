@@ -7,20 +7,23 @@ import ReactIcon from '../react-icon';
 import GithubIcon from '../github-icon';
 import TwitterIcon from '../twitter-icon';
 import LinkedinIcon from '../linkedin-icon';
-import Button from '../button';
 import styles from './styles';
 
-const { object } = React.PropTypes;
+const { object, string } = React.PropTypes;
 
 @pureRender
 export default class HomeScreen extends React.Component {
 
   static propTypes = {
     actions: object,
+    demoPageUrl: string,
+    githubUrl: string,
+    twitterUrl: string,
+    linkedinUrl: string,
   }
 
   render() {
-    const { actions } = this.props;
+    const { actions, demoPageUrl, githubUrl, twitterUrl, linkedinUrl } = this.props;
 
     return (
       <div className={styles.root}>
@@ -38,33 +41,28 @@ export default class HomeScreen extends React.Component {
           <div className={styles.iam}>
             I'm a freelancer and I love
           </div>
-          <a className={styles.javaScriptIcon}
-            href="http://marcelbeumer.github.io/react-blueprint"
-            alt="JavaScript">
+          <a className={styles.javaScriptIcon} href={demoPageUrl} alt="demo"
+            onClick={actions.trackLink}>
             <JavaScriptIcon />
           </a>
-          <a className={styles.reactIcon}
-            href="http://marcelbeumer.github.io/react-blueprint"
-            alt="React">
+          <a className={styles.reactIcon} href={demoPageUrl} alt="demo"
+            onClick={actions.trackLink}>
             <ReactIcon />
           </a>
 
           <div className={styles.websites}>
-            <a className={styles.githubIcon}
-              href="https://github.com/marcelbeumer/marcelbeumer.com"
-              alt="Github">
+            <a className={styles.githubIcon} href={githubUrl} alt="Github"
+              onClick={actions.trackLink}>
               <GithubIcon />
             </a>
 
-            <a className={styles.twitterIcon}
-              href="https://twitter.com/marcelbeumer"
-              alt="Twitter">
+            <a className={styles.twitterIcon} href={twitterUrl} alt="Twitter"
+              onClick={actions.trackLink}>
               <TwitterIcon />
             </a>
 
-            <a className={styles.linkedinIcon}
-              href="https://linkedin.com/in/marcelbeumer"
-              alt="LinkedIn">
+            <a className={styles.linkedinIcon} href={linkedinUrl} alt="LinkedIn"
+              onClick={actions.trackLink}>
               <LinkedinIcon />
             </a>
           </div>
