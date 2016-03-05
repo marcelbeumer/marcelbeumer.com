@@ -11,18 +11,22 @@ const itemMargin = 2;
 
 export const styles = StyleSheet.create({
   root: {
-    lineHeight: `calc(1em - ${itemMargin}px)`,
   },
   item: {
     height: '1em',
     padding: `0 0 ${itemMargin}px 0`,
+    display: 'flex',
   },
   itemInner: {
-    fontSize: '1rem',
-    fontWeight: 'bold',
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    borderRadius: px(theme.baseBorderRadius),
     backgroundColor: theme.highlightColor,
     color: theme.inverseTextColor,
-    borderRadius: px(theme.baseBorderRadius),
+    fontSize: '1rem',
+    fontWeight: 'bold',
   },
 });
 
