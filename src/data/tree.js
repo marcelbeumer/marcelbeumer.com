@@ -2,7 +2,7 @@
 import { Record } from 'immutable';
 
 const TreeData = Record({
-  demoPageUrl: 'http://marcelbeumer.github.io/react-blueprint/',
+  demoPageUrl: 'http://react-blueprint.marcelbeumer.com',
   githubUrl: 'https://github.com/marcelbeumer/marcelbeumer.com',
   twitterUrl: 'https://twitter.com/marcelbeumer',
   linkedinUrl: 'https://linkedin.com/in/marcelbeumer',
