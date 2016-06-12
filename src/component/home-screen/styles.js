@@ -138,6 +138,9 @@ const styles = StyleSheet.create({
   linkedinIcon: Object.assign({}, websiteIconShared, {
     top: '2px',
   }),
+  mediumIcon: Object.assign({}, websiteIconShared, {
+    top: '-2px',
+  }),
   controls: {
     display: 'flex',
     padding: '120px 10% 80px 10%',

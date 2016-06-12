@@ -6,6 +6,7 @@ const TreeData = Record({
   githubUrl: 'https://github.com/marcelbeumer/marcelbeumer.com',
   twitterUrl: 'https://twitter.com/marcelbeumer',
   linkedinUrl: 'https://linkedin.com/in/marcelbeumer',
+  mediumUrl: 'https://medium.com/@marcelbeumer',
 });
 
 TreeData.fromServerData = data => {

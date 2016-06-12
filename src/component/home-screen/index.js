@@ -7,6 +7,7 @@ import ReactIcon from '../react-icon';
 import GithubIcon from '../github-icon';
 import TwitterIcon from '../twitter-icon';
 import LinkedinIcon from '../linkedin-icon';
+import MediumIcon from '../medium-icon';
 import styles from './styles';
 
 const { object, string } = React.PropTypes;
@@ -20,10 +21,11 @@ export default class HomeScreen extends React.Component {
     githubUrl: string,
     twitterUrl: string,
     linkedinUrl: string,
+    mediumUrl: string,
   }
 
   render() {
-    const { actions, demoPageUrl, githubUrl, twitterUrl, linkedinUrl } = this.props;
+    const { actions, demoPageUrl, githubUrl, twitterUrl, linkedinUrl, mediumUrl } = this.props;
 
     return (
       <div className={styles.root}>
@@ -51,6 +53,11 @@ export default class HomeScreen extends React.Component {
           </a>
 
           <div className={styles.websites}>
+            <a className={styles.mediumIcon} href={mediumUrl} alt="Github"
+              onClick={actions.trackLink}>
+              <MediumIcon />
+            </a>
+
             <a className={styles.githubIcon} href={githubUrl} alt="Github"
               onClick={actions.trackLink}>
               <GithubIcon />
