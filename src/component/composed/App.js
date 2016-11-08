@@ -82,8 +82,8 @@ const App = () => (
         <SiteLogo />
       </div>
       <p className={styles.heroText}>
-        I make apps and do freelance gigs.<br />
-        I love JavaScript and React.
+        I make apps and web frontends<br />
+        with JavaScript and React
       </p>
       <div className={styles.icons}>
         <Link href="https://medium.com/@marcelbeumer" className={styles.icon}>
