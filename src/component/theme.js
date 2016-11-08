@@ -2,15 +2,13 @@
 import StyleSheet from './styles';
 
 const theme = {
-  fontFamily: 'Helvetica, sans-serif',
-  fontWeight: '100',
-  backgroundColor: '#FF4542',
-  foregroundColor: '#D41C1C',
-  textColor: '#BA1818',
+  backgroundColor: '#fefefe',
+  foregroundColor: '#333333',
+  textColor: '#333333',
+  gutter: 10,
   media: {
-    biggerPhones: '@media screen and (min-width: 360px)',
-    fromTablet: '@media screen and (min-width: 600px)',
-    fromDesktop: '@media screen and (min-width: 800px)',
+    midSize: '@media screen and (min-width: 600px)',
+    fullSize: '@media screen and (min-width: 768px)',
   },
 };
 

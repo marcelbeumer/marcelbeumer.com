@@ -1,11 +1,12 @@
 // @flow
 /* eslint max-len:0 */
 import React from 'react';
+import theme from '../theme';
 
-const MediumIcon = (props: {color: string}) => (
+const MediumIcon = ({color = theme.foregroundColor}: {color?: string}) => (
   <svg viewBox="0 0 106 89">
     <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-        <g fill={props.color}>
+        <g fill={color}>
             <path d="M104.839,16.327 C104.819,16.311 104.803,16.29 104.778,16.278 L104.742,16.26 L73.172,0.475 C72.959,0.368 72.735,0.296 72.508,0.238 C72.223,0.165 71.932,0.12 71.64,0.12 C70.431,0.12 69.228,0.727 68.576,1.785 L50.401,31.321 L73.21,68.385 L104.936,16.831 C105.041,16.659 104.991,16.447 104.839,16.327" />
             <polyline id="Fill-54" points="40.39 24.593 40.39 58.214 70.274 73.156 40.39 24.593" />
             <path d="M74.764,75.401 L99.363,87.7 C102.564,89.301 105.159,88.18 105.159,85.198 L105.159,26.009 L74.764,75.401" />

@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import theme from '../theme';
 
 const viewBox = '0 0 484 171';
 const path = [
@@ -343,9 +344,9 @@ const path = [
   'Z',
 ];
 
-const SiteLogo = (props: {color: string}) => (
+const SiteLogo = ({color = theme.foregroundColor}: {color?: string}) => (
   <svg viewBox={viewBox}>
-    <path d={path.join(' ')} fill={props.color} />
+    <path d={path.join(' ')} fill={color} />
   </svg>
 );
 

@@ -12,7 +12,9 @@ html {
 }
 
 body {
-  background-color: #FF4542;
+  background-color: #fefefe;
+  font-family: Helvetica, sans-serif;
+  font-weight: 100;
 }
 
 a {
