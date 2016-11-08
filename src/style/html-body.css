@@ -12,8 +12,7 @@ html {
 }
 
 body {
-  background-color: var(--ui-background-color);
-  color: var(--ui-text-color);
+  background-color: #FF4542;
 }
 
 a {
