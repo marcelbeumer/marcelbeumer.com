@@ -1,8 +1,8 @@
-# marcelbeumer.com
+# react-blueprint [![Build Status](https://travis-ci.org/marcelbeumer/react-blueprint.svg?branch=master)](https://travis-ci.org/marcelbeumer/react-blueprint) [![devDependency Status](https://david-dm.org/marcelbeumer/react-blueprint/dev-status.svg)](https://david-dm.org/marcelbeumer/react-blueprint#info=devDependencies)
 
-Website based on [react-blueprint](https://github.com/marcelbeumer/react-blueprint).
+> Showcase React architecture
 
-## Development
+## Getting started
 
 ```bash
 $ npm install
@@ -10,9 +10,23 @@ $ npm start
 $ open http://localhost:8080
 ```
 
-## Production
+## Features
 
-```bash
-$ npm install
-$ npm run build
-```
+- Babel, Webpack, Flow
+- Redux, Immutable.js
+- Flat functional-style component structure
+- Connect to dynamic data sources using render services
+- Decoupled (mini)router
+- CSS in JS using Stilr
+- Animation with react-motion
+- Devserver that reloads browser and server code
+
+## Server rendering
+
+Server rendering is enabled by default. To disable use `SSR=0 npm start` or reload the page using `?ssr=0`.
+
+## Browser debugging
+
+Enable [debug](https://www.npmjs.com/package/debug) output by executing `localStorage.debug = '*'` and reloading the page. See the [debug documentation](https://www.npmjs.com/package/debug#browser-support).
+
+Expose useful debugging objects by setting a global variable name: `localStarage.expose = '__'`. This will expose to `window.__`.

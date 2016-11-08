@@ -2,19 +2,17 @@
 <html>
   <head>
     <meta charset=utf-8>
-    <title>Marcel Beumer</title>
+    <title>React Blueprint</title>
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="Freelance JavaScript/React GUI developer">
-    <meta name="keywords" content="JavaScript, HTML, CSS, React, Node, ES6, ES7, React, CLI, Bash, Vim, Python, Django, XML, XSLT, architecture, integration, mobile, UX">
+    <meta name="description" content="Ready for takeoff React setup">
+    <meta property="og:image" content="https://raw.githubusercontent.com/marcelbeumer/react-blueprint/master/icon.png" />
+    <link href="__ASSETS__/style.css?__REVISION__" rel="stylesheet" />
+    <link href="__ASSETS__/component.css?__REVISION__" rel="stylesheet" />
   </head>
   <body>
-    <style id="css"></style>
     <div id="root"></div>
-    <% (htmlWebpackPlugin.options.scripts || []).forEach(function(script) { %>
-      <script src="<%= script %>"></script>
-    <% }) %>
     <script type="application/json" id="data"></script>
-    <script>
-    </script>
+    <script src="__ASSETS__/vendor.js?__REVISION__"></script>
+    <script src="__ASSETS__/app.js?__REVISION__"></script>
   </body>
 </html>

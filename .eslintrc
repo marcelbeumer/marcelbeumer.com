@@ -1,8 +1,3 @@
 {
-  "extends": "airbnb",
-  "parser": "babel-eslint",
-  "rules": {
-    "func-names": 0,
-    "react/jsx-closing-bracket-location": 0
-  }
+  "extends": "./eslint/index.js"
 }
