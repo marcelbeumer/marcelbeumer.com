@@ -89,13 +89,13 @@ const App = () => (
         <Link href="https://medium.com/@marcelbeumer" className={styles.icon}>
           <MediumIcon />
         </Link>
-        <Link href="https://medium.com/@marcelbeumer" className={styles.icon}>
+        <Link href="https://github.com/marcelbeumer" className={styles.icon}>
           <GithubIcon />
         </Link>
-        <Link href="https://medium.com/@marcelbeumer" className={styles.icon}>
+        <Link href="https://twitter.com/marcelbeumer" className={styles.icon}>
           <TwitterIcon />
         </Link>
-        <Link href="https://medium.com/@marcelbeumer" className={styles.icon}>
+        <Link href="https://linkedin.com/in/marcelbeumer" className={styles.icon}>
           <LinkedInIcon />
         </Link>
       </div>
