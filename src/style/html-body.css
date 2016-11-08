@@ -12,8 +12,9 @@ html {
 }
 
 body {
-  background-color: var(--ui-background-color);
-  color: var(--ui-text-color);
+  background-color: #fefefe;
+  font-family: Helvetica, sans-serif;
+  font-weight: 100;
 }
 
 a {

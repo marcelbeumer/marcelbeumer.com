@@ -1,18 +1,14 @@
+// @flow
 import StyleSheet from './styles';
 
 const theme = {
-  fontFamily: 'Helvetica, sans-serif',
-  fontWeight: '100',
-  backgroundColor: '#fff',
-  highlightColor: '#000',
-  primaryBorderColor: '#000',
-  secondaryBorderColor: '#000',
-  textColor: '#000',
-  inverseTextColor: '#fff',
-  baseBorderRadius: 3,
+  backgroundColor: '#fefefe',
+  foregroundColor: '#333333',
+  textColor: '#333333',
+  gutter: 10,
   media: {
-    fromTablet: '@media screen and (min-width: 600px)',
-    fromDesktop: '@media screen and (min-width: 800px)',
+    midSize: '@media screen and (min-width: 600px)',
+    fullSize: '@media screen and (min-width: 768px)',
   },
 };
 
@@ -20,7 +16,7 @@ const theme = {
 StyleSheet.create({
   __: Object.keys(theme.media).reduce((p, c, i) => {
     const rules = p;
-    rules[theme.media[c]] = { fontSize: i };
+    rules[theme.media[c]] = {fontSize: i};
     return rules;
   }, {}),
 });

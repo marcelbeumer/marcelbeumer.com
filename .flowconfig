@@ -1,0 +1,10 @@
+[options]
+suppress_comment= \\(.\\|\n\\)*\\$FlowFixMe
+
+[libs]
+definitions/
+
+[ignore]
+.*/node_modules/fbjs
+.*/node_modules/systemjs-builder
+.*/node_modules/react-motion
