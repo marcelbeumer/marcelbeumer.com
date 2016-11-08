@@ -7,8 +7,6 @@ const routes = (routeServices: Object): Object => {
   };
 
   return {
-    third: createRoute('/3.html', setScreen),
-    second: createRoute('/2.html', setScreen),
     home: createRoute('/', setScreen),
   };
 };

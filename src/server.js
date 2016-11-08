@@ -6,7 +6,7 @@ import ReactDOMServer from 'react-dom/server';
 import express from 'express';
 import fs from 'fs';
 import webpackConfig from '../webpack.config';
-import DataTree from './data/tree';
+import AppState from './data/AppState';
 import createStore from './store';
 import * as actions from './store/action';
 import Router, {InvalidRouteError} from './router/Router';
@@ -37,7 +37,7 @@ function bootstrapApp(location: string): Object {
   const storeServices = {};
   const routeServices = {};
   const renderServices = {};
-  const initialState = new DataTree();
+  const initialState = new AppState();
   const store = createStore(initialState, storeServices);
   const router = new Router(routes(routeServices), location);
 

@@ -3,12 +3,14 @@ import './style/index.css';
 import Perf from 'react-addons-perf';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import DataTree from './data/tree';
+import AppState from './data/AppState';
 import createStore from './store';
 import * as actions from './store/action';
 import RootComponent from './component';
 import BrowserRouter from './router/BrowserRouter';
 import routes from './routes';
+
+const gaTrackingId = 'UA-28658618-1';
 
 global.React = React;
 global.ReactPerf = Perf;
@@ -27,7 +29,7 @@ function getData(id) {
 const routeServices = {};
 const renderServices = {};
 const storeServices = {};
-const initialState = DataTree.fromServerData(getData('data')); // eslint-disable-line new-cap
+const initialState = AppState.fromServerData(getData('data')); // eslint-disable-line new-cap
 const element = document.getElementById('root');
 const store = createStore(initialState, storeServices);
 const router = new BrowserRouter(routes(routeServices));
@@ -44,3 +46,7 @@ if (!element.querySelector('[data-react-checksum]')) {
 
 router.startListening();
 render(store, renderServices, element);
+
+if (process.env.NODE_ENV === 'production') {
+  require('./ga')(gaTrackingId);
+}
