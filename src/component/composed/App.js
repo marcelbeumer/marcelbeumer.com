@@ -74,6 +74,17 @@ export const styles = StyleSheet.create({
       margin: `0 ${px(theme.gutter)}`,
     },
   },
+  iconWh: {
+    width: px(38),
+    height: px(38),
+    margin: `0 ${px(theme.gutter / 2)}`,
+
+    [theme.media.midSize]: {
+      width: px(58),
+      height: px(58),
+      margin: `0 ${px(theme.gutter)}`,
+    },
+  },
 });
 
 const App = () => (
@@ -87,7 +98,7 @@ const App = () => (
         with JavaScript and React
       </p>
       <div className={styles.icons}>
-        <Link href="https://itunes.apple.com/de/developer/marcel-beumer/id1175753556?l=en&mt=8" className={styles.icon}>
+        <Link href="https://itunes.apple.com/de/developer/marcel-beumer/id1175753556?l=en&mt=8" className={styles.iconWh}>
           <AppStoreIcon />
         </Link>
         <Link href="https://medium.com/@marcelbeumer" className={styles.icon}>
