@@ -2,6 +2,7 @@
 import React from 'react';
 import StyleSheet, {px} from '../styles';
 import SiteLogo from '../base/SiteLogo';
+import AppStoreIcon from '../base/AppStoreIcon';
 import MediumIcon from '../base/MediumIcon';
 import GithubIcon from '../base/GithubIcon';
 import TwitterIcon from '../base/TwitterIcon';
@@ -86,6 +87,9 @@ const App = () => (
         with JavaScript and React
       </p>
       <div className={styles.icons}>
+        <Link href="https://itunes.apple.com/de/developer/marcel-beumer/id1175753556?l=en&mt=8" className={styles.icon}>
+          <AppStoreIcon />
+        </Link>
         <Link href="https://medium.com/@marcelbeumer" className={styles.icon}>
           <MediumIcon />
         </Link>

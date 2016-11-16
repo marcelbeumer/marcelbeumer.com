@@ -54,6 +54,8 @@ compiler.plugin('watch-run', (c, callback) => {
   callback();
 });
 
+app.use('/static', express.static('static'));
+
 app.use(path.join(publicPath, 'component.css'), (req, res) => {
   res.set('Content-Type', 'text/css');
   ready().then(() => res.send(getComponentCss(prod)));

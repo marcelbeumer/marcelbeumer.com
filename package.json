@@ -10,8 +10,8 @@
     "server": "node scripts/start-server.js",
     "render": "node scripts/render-pages.js",
     "dev-server": "node scripts/start-dev-server.js",
-    "deploy": "git checkout master && npm run build && git checkout gh-pages && rimraf asset/* *.html && cp -r dist/* .",
-    "build": "npm run clean && NODE_ENV=production webpack && NODE_ENV=production REVISION=`git rev-parse --short HEAD` npm run render -- --dist dist --asset dist/asset",
+    "static": "mkdir -p dist && cp -r static dist/static",
+    "build": "npm run clean && npm run static && NODE_ENV=production webpack && NODE_ENV=production REVISION=`git rev-parse --short HEAD` npm run render -- --dist dist --asset dist/asset",
     "start": "npm run dev-server"
   },
   "homepage": "https://github.com/marcelbeumer/marcelbeumer.com",
