@@ -14,8 +14,7 @@ const gaTrackingId = 'UA-28658618-1';
 
 global.React = React;
 global.ReactPerf = Perf;
-global.onunhandledrejection = ({reason}) =>
-  console.error(reason.stack || reason); // eslint-disable-line no-console
+global.onunhandledrejection = ({ reason }) => console.error(reason.stack || reason); // eslint-disable-line no-console
 
 function render(store, services, element) {
   ReactDOM.render(<RootComponent store={store} services={services} />, element);
@@ -33,12 +32,12 @@ const initialState = AppState.fromServerData(getData('data')); // eslint-disable
 const element = document.getElementById('root');
 const store = createStore(initialState, storeServices);
 const router = new BrowserRouter(routes(routeServices));
-const setScreen = (value) => store.dispatch(actions.setScreen(value));
+const setScreen = value => store.dispatch(actions.setScreen(value));
 const setUrl = router.setUrl.bind(router);
 const getUrl = router.getUrl.bind(router);
 
-Object.assign(routeServices, {setScreen});
-Object.assign(renderServices, {setUrl, getUrl});
+Object.assign(routeServices, { setScreen });
+Object.assign(renderServices, { setUrl, getUrl });
 
 if (!element.querySelector('[data-react-checksum]')) {
   router.runUrl(router.url);
@@ -47,6 +46,6 @@ if (!element.querySelector('[data-react-checksum]')) {
 router.startListening();
 render(store, renderServices, element);
 
-if (process.env.NODE_ENV === 'production') {
-  require('./ga')(gaTrackingId);
-}
+// if (process.env.NODE_ENV === 'production') {
+//   require('./ga')(gaTrackingId);
+// }
