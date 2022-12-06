@@ -43,7 +43,7 @@
     "css-loader": "^0.25.0",
     "debug": "^2.2.0",
     "eslint-plugin-jsx-a11y": "latest",
-    "express": "^4.13.4",
+    "express": "^4.17.3",
     "extract-text-webpack-plugin": "^1.0.1",
     "flow-bin": "latest",
     "immutable": "^3.8.1",
