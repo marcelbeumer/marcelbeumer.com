@@ -41,7 +41,7 @@
     "color": "^0.11.1",
     "connect-to-context": "^1.0.1",
     "css-loader": "^0.25.0",
-    "debug": "^2.2.0",
+    "debug": "^3.1.0",
     "eslint-plugin-jsx-a11y": "latest",
     "express": "^4.13.4",
     "extract-text-webpack-plugin": "^1.0.1",
